@@ -12,7 +12,7 @@ Give several AI website builders the same brief, keep every output, and score ea
 | HTML conformance | W3C Nu HTML Checker (offline) |
 | Brief coverage | required pages and facts from the brief |
 
-Design-quality scoring (rubric judges and a blind human panel) is described in the methodology and not built yet.
+Design quality is scored blind by AI judges from three vendors against `rubric/design-v1.json` (`pnpm bench design`), and by people on the dashboard's `/rate` page.
 
 ## Run a benchmark
 
@@ -27,7 +27,14 @@ pnpm bench run --brief demo-clinic-a --tool replit --site sites/demo-clinic-a--r
 
 Results are written to `results/<brief>/<tool>.json`.
 
-### Adding a builder's output
+### Adding a builder's output (Lovable, v0, Bolt, ...)
+
+1. Copy the prompt from `briefs/<id>.json` exactly and paste it into the builder. Do not add instructions or follow-up prompts.
+2. Download the project as a ZIP into `inbox/<builder>.zip` (for example `inbox/lovable.zip`). Note the date and plan.
+3. If the project is a framework app (React, Vite, Next), build it to static files (`npm install && npm run build`) and copy the build output (`dist/` or `out/`) to `sites/<brief>--<builder>/`. A plain HTML project is copied as is.
+4. Run `pnpm bench run ...` and `pnpm bench design --brief <id> --judges <models>` for the new builder, then `pnpm --dir dashboard collect` and redeploy.
+
+### Adding a builder's output (manual details)
 
 1. Copy the prompt from `briefs/<id>.json` exactly, and paste it into the builder (Replit, Lovable, v0, Bolt, ...). Do not add instructions.
 2. Export or download the generated site as static files. Record the date and plan in `--generated` and `--notes`.

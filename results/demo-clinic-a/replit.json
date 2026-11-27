@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "brief": "demo-clinic-a",
+  "briefVersion": 1,
+  "tool": "replit",
+  "generated": "2026-11-24",
+  "notes": null,
+  "evaluatedAt": "2026-11-27T14:34:42.332Z",
+  "siteHash": "e7e59470800bfac0",
+  "pages": [
+    "index.html",
+    "contact.html"
+  ],
+  "lighthouse": [
+    {
+      "page": "index.html",
+      "formFactor": "mobile",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 978.638,
+        "fcpMs": 753.141,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 753.141
+      },
+      "failedAudits": []
+    },
+    {
+      "page": "index.html",
+      "formFactor": "desktop",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 242.11,
+        "fcpMs": 202.146,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 202.146
+      },
+      "failedAudits": []
+    },
+    {
+      "page": "contact.html",
+      "formFactor": "mobile",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 901.159,
+        "fcpMs": 751.159,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 751.159
+      },
+      "failedAudits": []
+    },
+    {
+      "page": "contact.html",
+      "formFactor": "desktop",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 241.373,
+        "fcpMs": 202.036,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 202.036
+      },
+      "failedAudits": []
+    }
+  ],
+  "axe": {
+    "axeVersion": "4.14.0",
+    "widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      "index.html",
+      "contact.html"
+    ],
+    "violations": [],
+    "passes": 85,
+    "incomplete": 4
+  },
+  "validator": {
+    "validator": "W3C Nu HTML Checker 26.11.9 (524d973)",
+    "errors": 0,
+    "warnings": 1,
+    "messages": [
+      {
+        "type": "info",
+        "subType": "warning",
+        "message": "Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections, or else use a “div” element instead for any cases where no heading is needed.",
+        "page": "contact.html",
+        "line": 27
+      }
+    ]
+  },
+  "content": {
+    "pages": [
+      "index.html",
+      "contact.html"
+    ],
+    "missingPages": [],
+    "missingFacts": [
+      "general consultations"
+    ],
+    "forbiddenFound": []
+  },
+  "environment": {
+    "node": "v22.23.1",
+    "platform": "linux"
+  }
+}

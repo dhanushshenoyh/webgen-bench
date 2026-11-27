@@ -1,0 +1,23 @@
+{
+  "name": "webgen-bench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Run the same brief through several AI website builders and score every result with the same standard benchmarks.",
+  "scripts": {
+    "bench": "tsx runner/cli.ts",
+    "test": "tsx --test runner/*.test.ts"
+  },
+  "dependencies": {
+    "axe-core": "4.14.0",
+    "chrome-launcher": "1.2.3",
+    "lighthouse": "13.6.0",
+    "playwright-core": "1.65.1",
+    "vnu-jar": "26.11.9"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

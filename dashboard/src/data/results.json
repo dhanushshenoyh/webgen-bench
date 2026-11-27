@@ -1,0 +1,314 @@
+{
+  "collectedAt": "2026-11-27T14:52:54.145Z",
+  "briefs": {
+    "demo-clinic-a": {
+      "id": "demo-clinic-a",
+      "title": "Demo Clinic A (fictional general-care clinic)",
+      "version": 1,
+      "prompt": "Build a polished, accessible clinic website for Demo Clinic A, a fictional general-care clinic in Sample City. It offers general consultations, preventive-care visits and chronic-condition follow-up. The fictional clinician is Dr. Demo A, MBBS. Hours, phone, street address, booking endpoint, public domain and reviews are unknown: use graceful contact placeholders and navigation, without fabricating these details. Use two pages: Home and Contact. Adapt the layout of https://ravenhealth.com/ recognizably: match content width, desktop/mobile hero proportions, type scale, section spacing and surface rhythm, using original clinic copy and original assets. Do not copy source text, identities, logos or images. Include useful clinic/service copy, working navigation and an accessible mobile menu. Do not add a nonfunctional appointment form. Deliver runnable HTML/CSS/local JS. Avoid external analytics, authentication and databases.",
+      "requiredPages": [
+        "index.html",
+        "contact.html"
+      ],
+      "requiredFacts": [
+        "Demo Clinic A",
+        "Dr. Demo A",
+        "MBBS",
+        "Sample City",
+        "general consultations",
+        "preventive",
+        "chronic"
+      ]
+    }
+  },
+  "runs": [
+    {
+      "brief": "demo-clinic-a",
+      "tool": "radialpulse",
+      "generated": "2026-11-27",
+      "notes": "dev runtime 105",
+      "evaluatedAt": "2026-11-27T14:36:43.833Z",
+      "siteHash": "c5e41c5f083d0437",
+      "pages": [
+        "index.html",
+        "contact.html"
+      ],
+      "lighthouse": {
+        "mobile": {
+          "scores": {
+            "performance": 76,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "lcpMs": 17477.707,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "pages": [
+            {
+              "page": "index.html",
+              "scores": {
+                "performance": 75,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 17477.707,
+                "fcpMs": 902.794,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 902.794
+              }
+            },
+            {
+              "page": "contact.html",
+              "scores": {
+                "performance": 76,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 7502.303,
+                "fcpMs": 906.566,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 906.566
+              }
+            }
+          ],
+          "failedAudits": [
+            {
+              "id": "largest-contentful-paint",
+              "title": "Largest Contentful Paint",
+              "category": "performance"
+            }
+          ],
+          "runs": 5,
+          "version": "13.6.0"
+        },
+        "desktop": {
+          "scores": {
+            "performance": 91,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "lcpMs": 2982.762,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "pages": [
+            {
+              "page": "index.html",
+              "scores": {
+                "performance": 84,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 2982.762,
+                "fcpMs": 244.07,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 244.07
+              }
+            },
+            {
+              "page": "contact.html",
+              "scores": {
+                "performance": 97,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 1321.963,
+                "fcpMs": 242.671,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 242.671
+              }
+            }
+          ],
+          "failedAudits": [
+            {
+              "id": "largest-contentful-paint",
+              "title": "Largest Contentful Paint",
+              "category": "performance"
+            }
+          ],
+          "runs": 5,
+          "version": "13.6.0"
+        }
+      },
+      "axe": {
+        "version": "4.14.0",
+        "widths": [
+          1440,
+          390
+        ],
+        "rules": []
+      },
+      "validator": {
+        "name": "W3C Nu HTML Checker 26.11.9 (524d973)",
+        "errors": 0,
+        "warnings": 0,
+        "top": []
+      },
+      "content": {
+        "pages": [
+          "index.html",
+          "contact.html"
+        ],
+        "missingPages": [],
+        "missingFacts": [],
+        "forbiddenFound": []
+      }
+    },
+    {
+      "brief": "demo-clinic-a",
+      "tool": "replit",
+      "generated": "2026-11-24",
+      "notes": null,
+      "evaluatedAt": "2026-11-27T14:34:42.332Z",
+      "siteHash": "e7e59470800bfac0",
+      "pages": [
+        "index.html",
+        "contact.html"
+      ],
+      "lighthouse": {
+        "mobile": {
+          "scores": {
+            "performance": 100,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "lcpMs": 978.638,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "pages": [
+            {
+              "page": "index.html",
+              "scores": {
+                "performance": 100,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 978.638,
+                "fcpMs": 753.141,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 753.141
+              }
+            },
+            {
+              "page": "contact.html",
+              "scores": {
+                "performance": 100,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 901.159,
+                "fcpMs": 751.159,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 751.159
+              }
+            }
+          ],
+          "failedAudits": [],
+          "runs": 5,
+          "version": "13.6.0"
+        },
+        "desktop": {
+          "scores": {
+            "performance": 100,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 100
+          },
+          "metrics": {
+            "lcpMs": 242.11,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "pages": [
+            {
+              "page": "index.html",
+              "scores": {
+                "performance": 100,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 242.11,
+                "fcpMs": 202.146,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 202.146
+              }
+            },
+            {
+              "page": "contact.html",
+              "scores": {
+                "performance": 100,
+                "accessibility": 100,
+                "best-practices": 100,
+                "seo": 100
+              },
+              "metrics": {
+                "lcpMs": 241.373,
+                "fcpMs": 202.036,
+                "cls": 0,
+                "tbtMs": 0,
+                "speedIndexMs": 202.036
+              }
+            }
+          ],
+          "failedAudits": [],
+          "runs": 5,
+          "version": "13.6.0"
+        }
+      },
+      "axe": {
+        "version": "4.14.0",
+        "widths": [
+          1440,
+          390
+        ],
+        "rules": []
+      },
+      "validator": {
+        "name": "W3C Nu HTML Checker 26.11.9 (524d973)",
+        "errors": 0,
+        "warnings": 1,
+        "top": []
+      },
+      "content": {
+        "pages": [
+          "index.html",
+          "contact.html"
+        ],
+        "missingPages": [],
+        "missingFacts": [
+          "general consultations"
+        ],
+        "forbiddenFound": []
+      }
+    }
+  ]
+}

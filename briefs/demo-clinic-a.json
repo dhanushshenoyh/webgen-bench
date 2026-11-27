@@ -1,0 +1,9 @@
+{
+  "id": "demo-clinic-a",
+  "title": "Demo Clinic A (fictional general-care clinic)",
+  "version": 1,
+  "prompt": "Build a polished, accessible clinic website for Demo Clinic A, a fictional general-care clinic in Sample City. It offers general consultations, preventive-care visits and chronic-condition follow-up. The fictional clinician is Dr. Demo A, MBBS. Hours, phone, street address, booking endpoint, public domain and reviews are unknown: use graceful contact placeholders and navigation, without fabricating these details. Use two pages: Home and Contact. Adapt the layout of https://ravenhealth.com/ recognizably: match content width, desktop/mobile hero proportions, type scale, section spacing and surface rhythm, using original clinic copy and original assets. Do not copy source text, identities, logos or images. Include useful clinic/service copy, working navigation and an accessible mobile menu. Do not add a nonfunctional appointment form. Deliver runnable HTML/CSS/local JS. Avoid external analytics, authentication and databases.",
+  "requiredPages": ["index.html", "contact.html"],
+  "requiredFacts": ["Demo Clinic A", "Dr. Demo A", "MBBS", "Sample City", "general consultations", "preventive", "chronic"],
+  "forbidden": ["lorem ipsum"]
+}

@@ -6,9 +6,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-text), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -222,3 +222,34 @@
     @apply font-sans;
   }
 }
+/* webgen-bench identity: photo-finish board */
+:root {
+  --wb-ultra: #1d2a9e;
+  --wb-ultra-deep: #121a6b;
+  --wb-signal: #ffd23f;
+  --wb-paper: #f6f7fb;
+  --wb-ink: #12153d;
+  --wb-muted: #5b6385;
+  --wb-line: #dfe3f0;
+  --wb-card: #ffffff;
+}
+body { background: var(--wb-paper); color: var(--wb-ink); font-family: var(--font-text), ui-sans-serif, system-ui, sans-serif; }
+.wb-display { font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif; font-optical-sizing: auto; }
+.wb-num { font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif; font-variant-numeric: tabular-nums; }
+.wb-hero {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgb(255 255 255 / 0.10), transparent 60%),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.045) 0 1px, transparent 1px 80px),
+    linear-gradient(180deg, var(--wb-ultra) 0%, var(--wb-ultra-deep) 100%);
+}
+@keyframes wb-race { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes wb-sweep { from { transform: translateX(-30%); opacity: 0; } 15% { opacity: 1; } to { transform: translateX(130%); opacity: 0; } }
+@keyframes wb-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.wb-lane-bar { transform-origin: left center; animation: wb-race 1.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.wb-lane-value { animation: wb-pop 0.5s ease-out both; }
+.wb-sweep { animation: wb-sweep 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both; }
+@media (prefers-reduced-motion: reduce) {
+  .wb-lane-bar, .wb-lane-value, .wb-sweep { animation: none; }
+  .wb-sweep { display: none; }
+}
+:focus-visible { outline: 2px solid var(--wb-signal); outline-offset: 3px; }

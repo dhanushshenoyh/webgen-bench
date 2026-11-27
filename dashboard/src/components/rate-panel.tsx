@@ -79,10 +79,11 @@ export function RatePanel() {
   }
 
   return (
+    <>
+    <div className="wb-hero text-white"><div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6"><a href="/" className="wb-display flex items-center gap-2 text-lg font-bold tracking-tight"><svg aria-hidden viewBox="0 0 24 24" className="size-6"><rect x="2" y="4" width="20" height="3" rx="1.5" fill="#ffd23f" /><rect x="2" y="10.5" width="14" height="3" rx="1.5" fill="#ff5e3a" /><rect x="2" y="17" width="17" height="3" rx="1.5" fill="#16b39e" /></svg>webgen-bench</a><a href="/" className="text-sm text-white/75 hover:text-white">Back to results</a></div></div>
     <main className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:px-6">
       <header className="grid gap-3">
-        <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">webgen-bench · blind rating</p>
-        <h1 className="text-3xl font-semibold tracking-tight text-balance">Rate {order.length} clinic websites</h1>
+                <h1 className="wb-display text-4xl font-extrabold tracking-tight text-balance">Rate {order.length} clinic websites</h1>
         <p className="max-w-3xl text-muted-foreground">
           Each website was built by a different AI tool from the same brief. The tools are hidden and the order is random. Browse each site, then score it on its own. It takes about 5 minutes per site.
         </p>
@@ -109,7 +110,7 @@ export function RatePanel() {
             <span className="font-medium">Initials (optional)</span>
             <input id="initials" value={initials} maxLength={8} onChange={(e) => setInitials(e.target.value)} className="w-32 rounded-md border bg-background px-3 py-1.5" />
           </label>
-          <button disabled={!role || order.length === 0} onClick={() => setStep(0)} className="w-fit rounded-md bg-foreground px-4 py-2 text-sm text-background disabled:opacity-40">Start rating</button>
+          <button disabled={!role || order.length === 0} onClick={() => setStep(0)} className="w-fit rounded-md bg-[var(--wb-ink)] px-5 py-2.5 text-sm font-semibold text-white rounded-full disabled:opacity-40">Start rating</button>
         </section>
       )}
 
@@ -185,5 +186,6 @@ export function RatePanel() {
         </section>
       )}
     </main>
+    </>
   );
 }

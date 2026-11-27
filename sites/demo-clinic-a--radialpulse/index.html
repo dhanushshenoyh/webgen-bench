@@ -3,29 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Demo Clinic A | General care in Sample City</title>
-<meta name="description" content="Demo Clinic A is a general-care clinic in Sample City offering general consultations, preventive-care visits and chronic-condition follow-up.">
+<title>Demo Clinic A | General-Care Clinic in Sample City</title>
+<meta name="description" content="Demo Clinic A in Sample City offers general consultations, preventive-care visits and chronic-condition follow-up with Dr. Demo A, MBBS.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Demo Clinic A | General care in Sample City">
-<meta property="og:description" content="General consultations, preventive-care visits and chronic-condition follow-up at Demo Clinic A in Sample City.">
+<meta property="og:title" content="Demo Clinic A | General-Care Clinic in Sample City">
+<meta property="og:description" content="General consultations, preventive-care visits and chronic-condition follow-up in Sample City.">
 <link rel="stylesheet" href="styles.css">
+<script src="nav.js" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MedicalClinic","name":"Demo Clinic A","description":"A general-care clinic in Sample City offering general consultations, preventive-care visits and chronic-condition follow-up.","address":{"@type":"PostalAddress","addressLocality":"Sample City"}}
+{"@context":"https://schema.org","@type":"MedicalClinic","name":"Demo Clinic A","description":"A general-care clinic in Sample City offering general consultations, preventive-care visits and chronic-condition follow-up.","address":{"@type":"PostalAddress","addressLocality":"Sample City"},"employee":{"@type":"Person","name":"Dr. Demo A","honorificSuffix":"MBBS"}}
 </script>
-<script src="menu.js" defer></script>
 <link rel="stylesheet" href="motion.css">
 <script src="motion.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header" data-header>
-  <div class="container header-inner">
+  <div class="wrap header-in">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Demo Clinic A</a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Main">
+    <button class="menu-btn rp-press" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav-list">
         <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="index.html#services">Our visits</a></li>
+        <li><a href="index.html#services">Our care</a></li>
         <li><a href="index.html#doctor">Our doctor</a></li>
         <li><a class="btn rp-press" href="contact.html">Contact</a></li>
       </ul>
@@ -35,148 +35,180 @@
 
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero-grid">
+    <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">General-care clinic · Sample City</p>
-        <h1 class="display" id="hero-title" data-split>Everyday medical care in Sample City</h1>
-        <p class="lead">Demo Clinic A offers general consultations, preventive-care visits and chronic-condition follow-up.</p>
-        <a class="btn btn-solid rp-press" href="contact.html">Find the clinic</a>
+        <h1 class="display" id="hero-title" data-split>Everyday health care in Sample City</h1>
+        <p class="lead">Demo Clinic A offers General consultations, Preventive-care visits and Chronic-condition follow-up.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid rp-press" href="contact.html">Find the clinic</a>
+          <a class="link-quiet rp-arrow" href="#services">Our care</a>
+        </div>
       </div>
-      <div class="hero-media">
-        <img src="./assets/images/b075850fad69567a08ca545f32082f82d6aca0400ec6efd5d9fa457f75bd20b8.png" alt="Illustration for Demo Clinic A's general consultations, preventive-care visits and chronic-condition follow-up" width="1024" height="1024" loading="eager" fetchpriority="high">
+      <div class="hero-media" data-parallax>
+        <img src="./assets/images/b075850fad69567a08ca545f32082f82d6aca0400ec6efd5d9fa457f75bd20b8.webp" alt="Illustration of a calm consultation setting at a general-care clinic" width="547" height="547" loading="eager" fetchpriority="high">
       </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="At a glance">
+    <div class="wrap">
+      <dl class="facts-list" data-reveal data-stagger>
+        <div><dt>Clinic</dt><dd>Demo Clinic A, a general-care clinic</dd></div>
+        <div><dt>Where</dt><dd>Sample City</dd></div>
+        <div><dt>Doctor</dt><dd>Dr. Demo A, MBBS</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="services-intro" data-reveal="left">
+        <p class="eyebrow">Our care</p>
+        <h2 id="services-title">Three ways to see the doctor</h2>
+        <p>Pick the visit that matches why you are coming in. Each one comes with questions you can take along.</p>
+      </div>
+      <ul class="care-grid" data-stagger>
+        <li class="service-card rp-lift" id="general-consultations" data-reveal>
+          <div class="service-img"><img src="./assets/images/a376efc8c2c74cffa148ca050f1fd7376b36e5ca6e165312efd2da3c381f275c.webp" alt="Illustration representing a general consultation" width="200" height="150" loading="lazy"></div>
+          <div class="service-body">
+            <h3>General consultations</h3>
+            <p>A visit to talk with the doctor about a health concern, new or ongoing, and decide what to do next.</p>
+          </div>
+        </li>
+        <li class="ask-card" data-reveal>
+          <p class="eyebrow">You might ask</p>
+          <ul>
+            <li>What should I note down about how I have been feeling?</li>
+            <li>Which of my questions should we cover first?</li>
+          </ul>
+        </li>
+        <li class="service-card rp-lift" id="preventive-care-visits" data-reveal>
+          <div class="service-img"><img src="./assets/images/6a342410997374a3c447103e710016c86e0a14ddf7d64d09262da5caecce7a9d.webp" alt="Illustration representing a preventive-care visit" width="200" height="150" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Preventive-care visits</h3>
+            <p>Visits for looking after your health before problems arise, so you can plan ahead with the doctor.</p>
+          </div>
+        </li>
+        <li class="ask-card" data-reveal>
+          <p class="eyebrow">You might ask</p>
+          <ul>
+            <li>Which parts of my health would be useful to review?</li>
+            <li>What would a sensible plan for future visits look like?</li>
+          </ul>
+        </li>
+        <li class="service-card rp-lift" id="chronic-condition-follow-up" data-reveal>
+          <div class="service-img"><img src="./assets/images/bb069e0110f4d8d666aa4140510a45eaeaa0666d126e3cf8d1610d84726c468e.webp" alt="Illustration representing chronic-condition follow-up" width="200" height="150" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Chronic-condition follow-up</h3>
+            <p>Return visits to review a long-term condition you already live with and keep your care joined up.</p>
+          </div>
+        </li>
+        <li class="ask-card" data-reveal>
+          <p class="eyebrow">You might ask</p>
+          <ul>
+            <li>How often should we review my condition together?</li>
+            <li>Which of my current medicines should we go over?</li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 
   <section class="statement" aria-labelledby="statement-title">
-    <div class="container" data-reveal>
-      <p class="eyebrow">At Demo Clinic A</p>
-      <h2 class="h2" id="statement-title">Care for today, for staying well and for the long term</h2>
-      <p>Our clinic in Sample City is built around three kinds of visit.</p>
+    <div class="wrap">
+      <h2 id="statement-title" data-reveal>One clinic for the questions you ask once and the ones you keep asking</h2>
     </div>
   </section>
 
-  <section class="services" id="services" aria-labelledby="services-title">
-    <div class="container services-layout">
-      <div class="services-intro" data-reveal="left">
-        <p class="eyebrow">Our visits</p>
-        <h2 class="h2" id="services-title">What each visit is for</h2>
-        <p>Pick the one closest to why you are coming. If you are not sure, ask us when you get in touch.</p>
-      </div>
-      <div class="svc-list" data-stagger>
-        <article class="svc rp-lift" id="general-consultations">
-          <div class="svc-media"><img src="./assets/images/a376efc8c2c74cffa148ca050f1fd7376b36e5ca6e165312efd2da3c381f275c.png" alt="Illustration for general consultations" width="512" height="512" loading="lazy"></div>
-          <h3 class="h3">General consultations</h3>
-          <p>A visit to talk through a health concern with the doctor. It suits you when something specific is on your mind.</p>
-          <p class="ask">Ask: which details about my concern are most useful to share?</p>
-        </article>
-        <article class="svc rp-lift" id="preventive-care-visits">
-          <div class="svc-media"><img src="./assets/images/6a342410997374a3c447103e710016c86e0a14ddf7d64d09262da5caecce7a9d.png" alt="Illustration for preventive-care visits" width="512" height="512" loading="lazy"></div>
-          <h3 class="h3">Preventive-care visits</h3>
-          <p>A visit centred on staying well rather than on a single problem. Ask the clinic what a visit covers before you come.</p>
-          <p class="ask">Ask: what would help me look after my health day to day?</p>
-        </article>
-        <article class="svc rp-lift" id="chronic-condition-follow-up">
-          <div class="svc-media"><img src="./assets/images/bb069e0110f4d8d666aa4140510a45eaeaa0666d126e3cf8d1610d84726c468e.png" alt="Illustration for chronic-condition follow-up" width="512" height="512" loading="lazy"></div>
-          <h3 class="h3">Chronic-condition follow-up</h3>
-          <p>Return visits to review a long-term condition you already live with, so your questions have a regular place to be asked.</p>
-          <p class="ask">Ask: how often should I come back, and what should I bring?</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="visit" id="before-visit" aria-labelledby="visit-title">
-    <div class="container visit-grid">
-      <div class="visit-head" data-reveal>
+  <section class="checklist" id="before-your-visit" aria-labelledby="check-title">
+    <div class="wrap">
+      <div class="check-head" data-reveal>
         <p class="eyebrow">Before your visit</p>
-        <h2 class="h2" id="visit-title">Four things you might bring along</h2>
-        <p>None of these are required. They simply make the conversation easier.</p>
+        <h2 id="check-title">Four small things that can help</h2>
+        <p>These are suggestions, not requirements. Bring what you have.</p>
       </div>
-      <ol class="checklist" data-stagger>
-        <li class="check"><span class="num">01</span><div><h3 class="h3">Questions to ask</h3><p>You might jot down what you want to discuss, so it is ready when you arrive.</p></div></li>
-        <li class="check"><span class="num">02</span><div><h3 class="h3">Current medicines</h3><p>Consider writing a list of the medicines you take at the moment.</p></div></li>
-        <li class="check"><span class="num">03</span><div><h3 class="h3">Reports or scans</h3><p>If you have previous reports or scans, you could bring them with you.</p></div></li>
-        <li class="check"><span class="num">04</span><div><h3 class="h3">How to reach us</h3><p>Keep our location to hand so finding the clinic is easy.</p><a class="link rp-arrow" href="contact.html">See the Contact page</a></div></li>
+      <ol class="check-grid" data-stagger>
+        <li class="check-card rp-lift" data-reveal><span class="check-num">01</span><h3>Questions to ask</h3><p>Jot down what you want to discuss, in your own words, so nothing is forgotten.</p></li>
+        <li class="check-card rp-lift" data-reveal><span class="check-num">02</span><h3>Current medicines</h3><p>Make a list of the medicines you take now, so the doctor sees the full picture.</p></li>
+        <li class="check-card rp-lift" data-reveal><span class="check-num">03</span><h3>Earlier reports or scans</h3><p>If you have previous reports or scans, you may want to bring them along.</p></li>
+        <li class="check-card rp-lift" data-reveal><span class="check-num">04</span><h3>How to reach us</h3><p>Check the <a class="rp-underline" href="contact.html">Contact page</a> for how to find and reach the clinic.</p></li>
       </ol>
     </div>
   </section>
 
   <section class="doctor" id="doctor" aria-labelledby="doctor-title">
-    <div class="container">
+    <div class="wrap">
       <div class="doctor-card" data-reveal="scale">
         <div>
           <p class="eyebrow">Our doctor</p>
-          <h2 class="h2" id="doctor-title">Dr. Demo A</h2>
-          <span class="qual">MBBS</span>
+          <h2 id="doctor-title">Dr. Demo A</h2>
+          <span class="cred">MBBS</span>
         </div>
-        <div>
-          <p>Dr. Demo A, MBBS, is the doctor at Demo Clinic A in Sample City, covering general consultations, preventive-care visits and chronic-condition follow-up.</p>
-          <p>Have a question about which visit suits you? Raise it when you contact the clinic.</p>
-        </div>
+        <p>Dr. Demo A, MBBS, is the doctor at Demo Clinic A in Sample City. Bring your questions about a current concern, a plan for staying well, or a long-term condition you want to keep reviewing.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta on-dark" aria-labelledby="cta-title">
-    <div class="container cta-row">
-      <div class="cta-text" data-reveal="left">
+  <section class="find" aria-labelledby="find-title">
+    <div class="wrap find-grid">
+      <div data-reveal="left">
         <p class="eyebrow">Visit us</p>
-        <h2 class="h2" id="cta-title">Find Demo Clinic A in Sample City</h2>
-        <p>Our Contact page has the clinic's location and the latest on how to reach us.</p>
+        <h2 id="find-title">Find Demo Clinic A in Sample City</h2>
+        <div class="urgent" role="note">
+          <h3>In an emergency</h3>
+          <p>Call your local emergency number or go to the nearest emergency department. Do not wait for an appointment here.</p>
+        </div>
       </div>
-      <div class="cta-actions" data-reveal="right">
-        <a class="btn btn-light rp-press" href="contact.html">See contact details</a>
-        <a class="btn btn-ghost-light rp-press" href="#before-visit">Before your visit</a>
+      <div class="find-address" data-reveal="right">
+        <p class="muted">Our address</p>
+        <p class="address">Sample City</p>
+        <a class="btn btn-solid rp-press" href="contact.html">See address and contact details</a>
       </div>
     </div>
   </section>
 
-  <section class="faq" aria-labelledby="faq-title">
-    <div class="container faq-layout">
-      <h2 class="h2" id="faq-title" data-reveal>Questions people ask first</h2>
-      <div class="faq-grid" data-stagger>
-        <div class="qa">
-          <h3 class="h3">Which visit should I choose?</h3>
-          <p>If you have something specific to discuss, ask about a general consultation. For a long-term condition you already have, ask about chronic-condition follow-up. For a visit centred on staying well, ask about preventive-care visits.</p>
-        </div>
-        <div class="qa">
-          <h3 class="h3">What if it is an emergency?</h3>
-          <p>In a medical emergency, call your local emergency number or go to the nearest emergency department. Do not wait for a clinic visit.</p>
-        </div>
-        <div class="qa">
-          <h3 class="h3">How do I find the clinic?</h3>
-          <p>Demo Clinic A is in Sample City. The Contact page shows our location and will carry our phone number and opening hours.</p>
-        </div>
+  <section class="closing" aria-labelledby="next-title">
+    <div class="wrap">
+      <div class="closing-head" data-reveal>
+        <h2 id="next-title">Not sure where to start?</h2>
+        <p>Start with a general consultation and talk it through. You can also jump straight to any part of this page.</p>
       </div>
+      <ul class="next-grid" data-stagger>
+        <li data-reveal><a class="rp-lift" href="#general-consultations"><span class="next-tag">Visit</span><span class="next-name">General consultations</span></a></li>
+        <li data-reveal><a class="rp-lift" href="#preventive-care-visits"><span class="next-tag">Visit</span><span class="next-name">Preventive-care visits</span></a></li>
+        <li data-reveal><a class="rp-lift" href="#chronic-condition-follow-up"><span class="next-tag">Visit</span><span class="next-name">Chronic-condition follow-up</span></a></li>
+        <li data-reveal><a class="rp-lift" href="#doctor"><span class="next-tag">Doctor</span><span class="next-name">Dr. Demo A</span></a></li>
+        <li data-reveal><a class="rp-lift" href="#before-your-visit"><span class="next-tag">Prepare</span><span class="next-name">Before your visit</span></a></li>
+        <li data-reveal><a class="rp-lift" href="contact.html"><span class="next-tag">Reach us</span><span class="next-name">Contact</span></a></li>
+      </ul>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="wrap">
     <div class="footer-grid">
       <div>
-        <p class="footer-brand">Demo Clinic A</p>
-        <p>General-care clinic in Sample City. General consultations, preventive-care visits and chronic-condition follow-up with Dr. Demo A, MBBS.</p>
+        <h2 class="fname">Demo Clinic A</h2>
+        <p>General-care clinic in Sample City.</p>
+        <p>General consultations, Preventive-care visits and Chronic-condition follow-up.</p>
       </div>
       <div>
         <h2>Explore</h2>
         <ul>
-          <li><a href="index.html#services">Our visits</a></li>
-          <li><a href="index.html#before-visit">Before your visit</a></li>
-          <li><a href="index.html#doctor">Our doctor</a></li>
+          <li><a class="rp-underline" href="index.html">Home</a></li>
+          <li><a class="rp-underline" href="index.html#services">Our care</a></li>
+          <li><a class="rp-underline" href="index.html#doctor">Our doctor</a></li>
+          <li><a class="rp-underline" href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h2>Visit us</h2>
-        <ul>
-          <li>Sample City</li>
-          <li><a href="contact.html">Contact page</a></li>
-        </ul>
+        <p>Sample City</p>
+        <p>In a medical emergency, call your local emergency number or go to the nearest emergency department.</p>
       </div>
     </div>
-    <p class="footer-bottom">© Demo Clinic A, Sample City</p>
+    <div class="footer-bottom"><p>© Demo Clinic A. Sample City.</p></div>
   </div>
 </footer>
 </body>

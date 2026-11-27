@@ -4,9 +4,9 @@
   "briefVersion": 1,
   "tool": "radialpulse",
   "generated": "2026-11-27",
-  "notes": "dev runtime 105",
-  "evaluatedAt": "2026-11-27T14:36:43.833Z",
-  "siteHash": "c5e41c5f083d0437",
+  "notes": "dev runtime 110 (WebP images)",
+  "evaluatedAt": "2026-11-27T15:12:40.466Z",
+  "siteHash": "1afe17df6d8a6903",
   "pages": [
     "index.html",
     "contact.html"
@@ -18,25 +18,19 @@
       "runs": 5,
       "lighthouseVersion": "13.6.0",
       "scores": {
-        "performance": 75,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 17477.707,
-        "fcpMs": 902.794,
+        "lcpMs": 1577.421,
+        "fcpMs": 906.241,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 902.794
+        "speedIndexMs": 906.241
       },
-      "failedAudits": [
-        {
-          "id": "largest-contentful-paint",
-          "title": "Largest Contentful Paint",
-          "category": "performance"
-        }
-      ]
+      "failedAudits": []
     },
     {
       "page": "index.html",
@@ -44,25 +38,19 @@
       "runs": 5,
       "lighthouseVersion": "13.6.0",
       "scores": {
-        "performance": 84,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 2982.762,
-        "fcpMs": 244.07,
+        "lcpMs": 363.861,
+        "fcpMs": 245.556,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 244.07
+        "speedIndexMs": 245.556
       },
-      "failedAudits": [
-        {
-          "id": "largest-contentful-paint",
-          "title": "Largest Contentful Paint",
-          "category": "performance"
-        }
-      ]
+      "failedAudits": []
     },
     {
       "page": "contact.html",
@@ -70,25 +58,19 @@
       "runs": 5,
       "lighthouseVersion": "13.6.0",
       "scores": {
-        "performance": 76,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 7502.303,
-        "fcpMs": 906.566,
+        "lcpMs": 902.93,
+        "fcpMs": 902.93,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 906.566
+        "speedIndexMs": 902.93
       },
-      "failedAudits": [
-        {
-          "id": "largest-contentful-paint",
-          "title": "Largest Contentful Paint",
-          "category": "performance"
-        }
-      ]
+      "failedAudits": []
     },
     {
       "page": "contact.html",
@@ -96,25 +78,19 @@
       "runs": 5,
       "lighthouseVersion": "13.6.0",
       "scores": {
-        "performance": 97,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 1321.963,
-        "fcpMs": 242.671,
+        "lcpMs": 258.027,
+        "fcpMs": 258.027,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 242.671
+        "speedIndexMs": 258.027
       },
-      "failedAudits": [
-        {
-          "id": "largest-contentful-paint",
-          "title": "Largest Contentful Paint",
-          "category": "performance"
-        }
-      ]
+      "failedAudits": []
     }
   ],
   "axe": {
@@ -128,7 +104,7 @@
       "contact.html"
     ],
     "violations": [],
-    "passes": 88,
+    "passes": 100,
     "incomplete": 4
   },
   "validator": {

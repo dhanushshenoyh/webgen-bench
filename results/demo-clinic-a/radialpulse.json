@@ -4,9 +4,9 @@
   "briefVersion": 1,
   "tool": "radialpulse",
   "generated": "2026-11-27",
-  "notes": "dev runtime 110 (WebP images)",
-  "evaluatedAt": "2026-11-27T15:12:40.466Z",
-  "siteHash": "1afe17df6d8a6903",
+  "notes": "dev runtime 114",
+  "evaluatedAt": "2026-11-27T16:42:33.114Z",
+  "siteHash": "24a51e026f6c6a83",
   "pages": [
     "index.html",
     "contact.html"
@@ -24,11 +24,11 @@
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 1577.421,
-        "fcpMs": 906.241,
+        "lcpMs": 1505.222,
+        "fcpMs": 927.059,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 906.241
+        "speedIndexMs": 927.059
       },
       "failedAudits": []
     },
@@ -44,11 +44,11 @@
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 363.861,
-        "fcpMs": 245.556,
+        "lcpMs": 363.635,
+        "fcpMs": 246.635,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 245.556
+        "speedIndexMs": 246.635
       },
       "failedAudits": []
     },
@@ -64,11 +64,11 @@
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 902.93,
-        "fcpMs": 902.93,
+        "lcpMs": 1353.543,
+        "fcpMs": 904.819,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 902.93
+        "speedIndexMs": 904.819
       },
       "failedAudits": []
     },
@@ -84,11 +84,11 @@
         "seo": 100
       },
       "metrics": {
-        "lcpMs": 258.027,
-        "fcpMs": 258.027,
+        "lcpMs": 323.353,
+        "fcpMs": 244.26,
         "cls": 0,
         "tbtMs": 0,
-        "speedIndexMs": 258.027
+        "speedIndexMs": 244.26
       },
       "failedAudits": []
     }
@@ -104,7 +104,7 @@
       "contact.html"
     ],
     "violations": [],
-    "passes": 100,
+    "passes": 92,
     "incomplete": 4
   },
   "validator": {

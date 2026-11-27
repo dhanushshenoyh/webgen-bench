@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-27T16:08:01.218Z",
+  "collectedAt": "2026-11-27T16:45:20.535Z",
   "briefs": {
     "demo-clinic-a": {
       "id": "demo-clinic-a",
@@ -26,9 +26,9 @@
       "brief": "demo-clinic-a",
       "tool": "radialpulse",
       "generated": "2026-11-27",
-      "notes": "dev runtime 110 (WebP images)",
-      "evaluatedAt": "2026-11-27T15:12:40.466Z",
-      "siteHash": "1afe17df6d8a6903",
+      "notes": "dev runtime 114",
+      "evaluatedAt": "2026-11-27T16:42:33.114Z",
+      "siteHash": "24a51e026f6c6a83",
       "pages": [
         "index.html",
         "contact.html"
@@ -42,7 +42,7 @@
             "seo": 100
           },
           "metrics": {
-            "lcpMs": 1577.421,
+            "lcpMs": 1505.222,
             "cls": 0,
             "tbtMs": 0
           },
@@ -56,11 +56,11 @@
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 1577.421,
-                "fcpMs": 906.241,
+                "lcpMs": 1505.222,
+                "fcpMs": 927.059,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 906.241
+                "speedIndexMs": 927.059
               }
             },
             {
@@ -72,11 +72,11 @@
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 902.93,
-                "fcpMs": 902.93,
+                "lcpMs": 1353.543,
+                "fcpMs": 904.819,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 902.93
+                "speedIndexMs": 904.819
               }
             }
           ],
@@ -92,7 +92,7 @@
             "seo": 100
           },
           "metrics": {
-            "lcpMs": 363.861,
+            "lcpMs": 363.635,
             "cls": 0,
             "tbtMs": 0
           },
@@ -106,11 +106,11 @@
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 363.861,
-                "fcpMs": 245.556,
+                "lcpMs": 363.635,
+                "fcpMs": 246.635,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 245.556
+                "speedIndexMs": 246.635
               }
             },
             {
@@ -122,11 +122,11 @@
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 258.027,
-                "fcpMs": 258.027,
+                "lcpMs": 323.353,
+                "fcpMs": 244.26,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 258.027
+                "speedIndexMs": 244.26
               }
             }
           ],
@@ -308,14 +308,14 @@
         "google/gemini-3.1-pro-preview"
       ],
       "agreement": {
-        "allJudges": -0.25950633755837216,
-        "withoutAnthropic": -0.6386554621848739
+        "allJudges": -0.13461538461538458,
+        "withoutAnthropic": -0.2297297297297296
       },
-      "evaluatedAt": "2026-11-27T16:06:50.826Z",
+      "evaluatedAt": "2026-11-27T16:44:58.412Z",
       "note": "Each site is scored on its own (absolute), from screenshots, with tool names hidden. Radial Pulse generates with an Anthropic model, so scores are also reported without the Anthropic judge.",
       "sites": {
         "radialpulse": {
-          "anonId": "7ad638df",
+          "anonId": "29d0c612",
           "verdicts": [
             {
               "judge": "anthropic/claude-opus-5.5",
@@ -332,19 +332,21 @@
                 "fit": 4
               },
               "issues": [
-                "Home services section on desktop: the 'You might ask' companion cards are equal height to the image cards but hold only two bullet lines, leaving large empty lavender areas with content floating mid-card.",
-                "Hero subcopy capitalises service names mid-sentence ('General consultations, Preventive-care visits'), which reads awkwardly; the footer repeats the same phrasing.",
-                "'Not sure where to start?' jump-link tiles have uneven label baselines: two-line titles sit higher than one-line titles, so the row looks misaligned.",
-                "Home hero on desktop leaves dead space above the headline. The fact strip below (Clinic/Where/Doctor) restates obvious info and dilutes hierarchy.",
-                "Contact page has no real contact action, which follows the brief, but the 'Find the clinic' CTA leads to a page that only says 'coming soon'.",
-                "On phone, the home jump-link tiles become a cramped two-column grid with heavy top rules."
+                "Services section on desktop leaves a large empty lavender column under the sticky-less intro text, creating an unbalanced left half for most of the section's height.",
+                "Contact hero reuses nearly the same photo as the home hero, so the two pages feel repetitive and the contact page gains no new visual information.",
+                "Contact 'Where to find us' card has an odd internal hierarchy: an oversized 'Sample City' sits above a divider that hugs it too tightly, and 'Opening hours' is cramped against that rule.",
+                "'How to get in touch' card eyebrow is set larger and with different tracking than the other eyebrows, and its top padding is inconsistent with the adjacent card.",
+                "Typography is a system sans (Arial/Helvetica-like) throughout, so the type is readable but generic, not distinctive.",
+                "Mobile service card images don't span the full card width; they leave an uneven right gap inside the card.",
+                "The large empty gap between the contact cards and the 'What to ask us about' section is bigger than the other section gaps."
               ],
               "strengths": [
-                "Coherent indigo/lavender palette on an off-white base, with a dark footer that gives clear surface rhythm.",
-                "Consistent content width, rounded-card language and small-caps eyebrow labels across both pages.",
-                "Original, relevant clinic photography with consistent rounded crops.",
-                "Handles unknown details honestly with graceful placeholders and an urgent-care notice.",
-                "Mobile layouts restack sensibly, with readable text, a Menu button and full-width cards."
+                "Clear hero with a strong headline, a short supporting line, and a primary pill CTA paired with a secondary text link.",
+                "Coherent indigo/lavender palette with dark navy surfaces gives the site a calm clinic tone and good contrast.",
+                "Section surfaces alternate (lavender, white, off-white, indigo CTA band, dark footer), echoing the source layout's rhythm.",
+                "Placeholders are honest, with no fabricated phone, hours or address, and emergency guidance is handled responsibly.",
+                "Mobile is recomposed with centered hero text, a Menu button, stacked cards and comfortable tap targets.",
+                "Photography is warm, relevant and consistently treated with rounded corners."
               ]
             },
             {
@@ -355,48 +357,52 @@
                 "color": 4,
                 "layout": 4,
                 "spacing": 4,
-                "imagery": 4,
+                "imagery": 3,
                 "mobile": 4,
                 "consistency": 4,
                 "polish": 4,
                 "fit": 4
               },
               "issues": [
-                "The home service area uses large paired cards, especially the lavender 'You might ask' panels, with a lot of empty space on desktop.",
-                "Several secondary sections rely on similar card and list patterns, so the middle and lower home page can feel somewhat template-like despite being clean.",
-                "The contact page's desktop visit/FAQ area has very wide horizontal gaps, making the accordions feel a little isolated from their heading.",
-                "The photography is relevant and high quality, but it reads as generic clinic stock imagery and some crops feel more decorative than informative.",
-                "A few labels and phrases feel slightly awkward or over-styled, such as repeated title-case service names inside sentences and many small uppercase category labels."
+                "The services section on desktop leaves a very large inactive left column while the right-side cards stack, making that area feel a little empty after the intro copy.",
+                "Imagery is polished but feels somewhat generic and repetitive, with the same consultation photo reused across both hero pages and similar clinical stock-style thumbnails throughout.",
+                "Some calls to action are secondary or indirect for a clinic visitor: there is no single dominant contact/booking pathway, and several links point to informational sections instead.",
+                "The desktop emergency/contact strip on the Contact page separates the heading and explanatory text widely, which weakens the grouping of related information.",
+                "The design is clean but relies heavily on repeated rounded cards, pale lavender panels and text-link rows, so a few middle sections feel template-like rather than highly bespoke."
               ],
               "strengths": [
-                "The main hero messages on both pages are clear, calm and immediately appropriate for a general-care clinic.",
-                "The purple and lavender visual system is cohesive, readable and consistently applied across cards, buttons, navigation and footer.",
-                "The site uses graceful placeholders for unknown address, phone and hours instead of inventing details.",
-                "Mobile layouts are comfortably reflowed with readable text, large controls and no obvious overflow.",
-                "The footer, navigation, emergency guidance and service links give visitors sensible next steps without adding a nonfunctional appointment form."
+                "The hero areas have a clear focal point, strong headline, useful introductory copy and obvious next actions.",
+                "Typography is highly readable, with confident large headings, clear labels and comfortable body text across desktop and mobile.",
+                "The palette is calm, medical-appropriate and coherent, with purple used consistently for emphasis and navigation.",
+                "Mobile layouts are deliberately recomposed with readable text, large controls, stacked cards and well-contained imagery.",
+                "The site respects the brief by using graceful placeholders for unknown address, hours and phone details rather than inventing specifics.",
+                "The Home and Contact pages share a cohesive visual system, including the same header, buttons, rounded imagery, section labels and footer treatment."
               ]
             },
             {
               "judge": "google/gemini-3.1-pro-preview",
               "scores": {
-                "hierarchy": 5,
+                "hierarchy": 4,
                 "typography": 5,
                 "color": 5,
-                "layout": 5,
-                "spacing": 5,
+                "layout": 4,
+                "spacing": 4,
                 "imagery": 5,
-                "mobile": 5,
+                "mobile": 4,
                 "consistency": 5,
-                "polish": 5,
+                "polish": 4,
                 "fit": 5
               },
               "issues": [
-                "No concrete visible issues exist; the design is executed to a professional studio standard, perfectly fulfilling the brief with exceptional polish and coherence across all breakpoints."
+                "On the desktop Contact page, the 'Where to find us' and 'How to get in touch' cards are placed side-by-side but have unequal heights, disrupting the horizontal balance.",
+                "In the 'Three visits you can ask about' list on the Contact page, the vertical padding within each row appears slightly unbalanced, with more space below the link than above the title.",
+                "In the mobile footer, the vertical spacing between the section headings (e.g., 'PAGES') and their corresponding links is very tight, making the groupings feel slightly cramped."
               ],
               "strengths": [
-                "Graceful and creative handling of missing contact information using well-designed placeholder text and layout.",
-                "Highly coherent visual language with a calming, professional color palette perfectly suited for a medical clinic.",
-                "Excellent typographic hierarchy and spacing rhythm that makes scanning and reading effortless on both desktop and mobile."
+                "The color palette is cohesive, calming, and highly appropriate for a healthcare setting, providing excellent contrast for readability.",
+                "The typography system is well-defined, using scale and weight effectively to establish a clear visual hierarchy across all screen sizes.",
+                "The adaptation to mobile is deliberate and well-executed, ensuring that complex desktop layouts stack logically and remain easy to interact with.",
+                "The builder successfully implemented graceful placeholders for missing information (like hours and phone number) without breaking the design or sounding unprofessional."
               ]
             }
           ]
@@ -411,7 +417,7 @@
                 "typography": 3,
                 "color": 4,
                 "layout": 4,
-                "spacing": 4,
+                "spacing": 3,
                 "imagery": 3,
                 "mobile": 4,
                 "consistency": 4,
@@ -419,20 +425,20 @@
                 "fit": 4
               },
               "issues": [
-                "The serif display face looks like a system Times/Georgia fallback, so headings feel generic and slightly dated next to the Noto Sans body.",
-                "The clinician 'portrait' is a stethoscope icon tile whose 'Dr. Demo A' caption sits tight against the circle and looks cramped; on desktop the tile floats with excess space beside the text column.",
-                "The services grid on desktop has unequal card widths: the first card is wider and tinted while the other two are white.",
-                "The contact page's six placeholder cards are all 'To be confirmed', so a large grid area repeats the same italic text with little visual interest.",
-                "Some sections have uneven vertical spacing: large empty bands appear above the CTA band and above the 'Please note' disclaimer on the contact page.",
-                "The footer's bright underlined links look like browser defaults compared with the more refined components elsewhere."
+                "The serif display face looks like a system Times-style fallback, so headings feel default next to the more refined sans body text.",
+                "The first service card (lavender fill) differs from the other two (white) with no clear reason, and the three cards are visibly different widths in slice 2.",
+                "The clinician 'portrait' is a small stethoscope icon tile with a caption that is slightly offset and cramped under the circle; it reads as a placeholder.",
+                "There is a large empty band above the CTA and near the disclaimer (home slice 4, contact slice 3), which breaks the section rhythm.",
+                "On the contact page, six near-identical 'To be confirmed' cards dominate and the grid feels repetitive.",
+                "The footer link underlines and the bottom-border rule, which extends past the content width, look slightly unrefined."
               ],
               "strengths": [
-                "A calm lavender, cream, sage and peach palette suits a general-care clinic, with the purple accent used consistently on CTAs.",
-                "The hero has a clear headline, supporting copy, primary and secondary CTAs, and an original illustrated room scene.",
-                "Placeholders are handled gracefully and honestly, with no fabricated hours, phone or address, and no fake booking form.",
-                "Alternating surface colours give a clear section rhythm, and the content width stays consistent across sections.",
-                "The phone layout stacks cleanly with full-width buttons, a labelled Menu button and comfortable text sizes.",
-                "Emergency guidance and visit-preparation content are useful and well placed."
+                "Calm lavender/cream/sage/peach palette suits a clinic and uses the purple accent with restraint.",
+                "The hero has a clear headline, supporting copy and a primary/secondary CTA pair, plus a tasteful original illustration.",
+                "Unknown details are handled honestly with graceful placeholders and no fabricated data or fake form.",
+                "Alternating surface colours give the page a clear rhythm, consistent with the reference structure.",
+                "The mobile layout is properly reflowed, with a labelled Menu button, full-width buttons and comfortable text size.",
+                "The emergency guidance is useful and consistent across pages."
               ]
             },
             {
@@ -443,24 +449,25 @@
                 "color": 4,
                 "layout": 4,
                 "spacing": 4,
-                "imagery": 3,
+                "imagery": 4,
                 "mobile": 4,
-                "consistency": 4,
+                "consistency": 5,
                 "polish": 4,
                 "fit": 5
               },
               "issues": [
-                "Several mid-page areas rely heavily on similar rounded cards, especially the services and contact-detail grids, so parts of the site feel a little template-like.",
-                "The illustrations and icons are clean but quite simple and generic; the clinician graphic in particular feels more like a placeholder than a fully expressive brand asset.",
-                "Some vertical spacing is very generous on desktop and mobile, which creates calmness but also pushes practical details farther down the page than necessary.",
-                "A few finishing details, such as the default-looking underlined footer links and very sparse placeholder cards, are less refined than the strongest parts of the design."
+                "Several mid-page sections use similar rounded-card patterns, so parts of the services and contact-detail areas feel slightly template-like rather than fully bespoke.",
+                "The mobile contact page becomes a long stack of large cards with repeated placeholder text, which is clear but not very efficient for scanning.",
+                "Some footer links appear as plain underlined text, which is accessible but less refined than the rest of the component styling.",
+                "The illustrations and icons are clean and relevant, but they have a simple placeholder quality rather than feeling like a fully distinctive clinic image system.",
+                "There are a few very generous vertical gaps between sections, especially around transitions into large content blocks, which slightly slows the reading rhythm."
               ],
               "strengths": [
-                "The site handles unknown phone, address, hours, booking and reviews gracefully without inventing information.",
-                "The visual language is calm, coherent and appropriate for a general-care clinic.",
-                "Headings, calls to action and section labels create a clear reading order on both pages.",
-                "The mobile layouts are readable and intentionally stacked, with large tap targets and a visible menu control.",
-                "The two pages share a consistent type, colour, card, button and footer system."
+                "The site has a calm, polished healthcare tone with a coherent lavender, cream and deep-purple palette.",
+                "The brief is handled carefully: unknown contact, booking, hours, address and reviews are clearly marked as unavailable rather than invented.",
+                "The desktop layouts are balanced, with a strong hero, clear calls to action, useful service copy and well-structured clinician and preparation sections.",
+                "Mobile typography and controls are readable, with large tap targets and a clear simplified header.",
+                "The two pages share a consistent visual system, including type, cards, rounded corners, colours, disclaimers and footer treatment."
               ]
             },
             {
@@ -601,7 +608,7 @@
   "panel": {
     "demo-clinic-a": [
       {
-        "anonId": "7ad638df",
+        "anonId": "29d0c612",
         "pages": [
           "index.html",
           "contact.html"

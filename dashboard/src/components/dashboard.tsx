@@ -6,6 +6,14 @@ import { Bar } from "@/components/charts/bar";
 import { BarXAxis } from "@/components/charts/bar-x-axis";
 import { Grid } from "@/components/charts/grid";
 import { ChartTooltip } from "@/components/charts/tooltip";
+import { RingChart } from "@/components/charts/ring-chart";
+import { Ring } from "@/components/charts/ring";
+import { RadarChart } from "@/components/charts/radar-chart";
+import { RadarGrid } from "@/components/charts/radar-grid";
+import { RadarAxis } from "@/components/charts/radar-axis";
+import { RadarLabels } from "@/components/charts/radar-labels";
+import { RadarArea } from "@/components/charts/radar-area";
+import { ArcGauge, Bullet, CountUp, JudgeDots, Mark, ScrollProgress, Segmented, TiltCard } from "@/components/viz";
 import raw from "@/data/results.json";
 
 type Rule = { id: string; impact: string | null; help: string; wcag: string[]; nodes: number; pages: string[] };
@@ -71,7 +79,7 @@ function Lane({ name, color, value, max, label, delay }: { name: string; color: 
         <div className="wb-lane-bar absolute inset-y-0 left-0 rounded-r-md" style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${color}40, ${color})`, animationDelay: `${delay}ms` }} />
       </div>
       <span className="wb-num wb-lane-value text-right text-2xl font-semibold text-white" style={{ animationDelay: `${delay + 900}ms` }}>
-        {value === null ? "—" : label}
+        {value === null ? "—" : <CountUp value={value} decimals={label.includes(".") ? 1 : 0} duration={1500} />}
       </span>
     </div>
   );
@@ -82,6 +90,14 @@ export function Dashboard() {
   const [briefId, setBriefId] = useState(briefIds[0]);
   const [device, setDevice] = useState<"mobile" | "desktop">("mobile");
   const [panel, setPanel] = useState<Panel | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [hoverCell, setHoverCell] = useState<string | null>(null);
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 24);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
   const brief = data.briefs[briefId];
   const runs = useMemo(() => data.runs.filter((r) => r.brief === briefId).sort((a, b) => builder(a.tool).name.localeCompare(builder(b.tool).name)), [briefId]);
   const design = data.design[briefId];
@@ -104,8 +120,9 @@ export function Dashboard() {
 
   return (
     <div className="min-h-screen">
-      <section className="wb-hero relative overflow-hidden text-white">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 pt-5 sm:px-6">
+      <ScrollProgress />
+      <header className={`sticky top-0 z-40 text-white transition-[background-color,box-shadow] duration-300 ${scrolled ? "wb-nav-scrolled" : "bg-[var(--wb-ultra)]"}`}>
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
           <a href="/" className="wb-display flex items-center gap-2 text-lg font-bold tracking-tight">
             <svg aria-hidden viewBox="0 0 24 24" className="size-6"><rect x="2" y="4" width="20" height="3" rx="1.5" fill="#ffd23f" /><rect x="2" y="10.5" width="14" height="3" rx="1.5" fill="#ff5e3a" /><rect x="2" y="17" width="17" height="3" rx="1.5" fill="#16b39e" /></svg>
             webgen-bench
@@ -114,11 +131,14 @@ export function Dashboard() {
             <a href="#technical" className="hidden rounded-md px-3 py-1.5 text-white/75 hover:text-white sm:block">Technical</a>
             <a href="#design" className="hidden rounded-md px-3 py-1.5 text-white/75 hover:text-white sm:block">Design</a>
             <a href="https://github.com/dhanushshenoyh/webgen-bench/blob/main/METHODOLOGY.md" className="hidden rounded-md px-3 py-1.5 text-white/75 hover:text-white sm:block">Method</a>
-            <a href="/rate" className="ml-2 rounded-full bg-[var(--wb-signal)] px-4 py-1.5 font-semibold text-[var(--wb-ink)] transition-transform hover:-translate-y-0.5">Rate the sites</a>
+            <a href="/rate" className="wb-press ml-2 rounded-full bg-[var(--wb-signal)] px-4 py-1.5 font-semibold text-[var(--wb-ink)]">Rate the sites</a>
           </div>
         </nav>
+      </header>
+      <section className="wb-hero relative overflow-hidden text-white">
 
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:pb-24 lg:pt-20">
+
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:pb-24 lg:pt-16">
           <div className="grid gap-6">
             <h1 className="wb-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[0.98] tracking-[-0.035em] text-balance">
               One brief. Every builder. The same tests.
@@ -173,7 +193,8 @@ export function Dashboard() {
                 const site = design.sites[run.tool];
                 const b = builder(run.tool);
                 return (
-                  <figure key={run.tool} className="group overflow-hidden rounded-2xl border border-[var(--wb-line)] bg-[var(--wb-card)] shadow-[0_24px_60px_-38px_rgba(18,21,61,0.55)]">
+                  <TiltCard key={run.tool} className="rounded-2xl">
+                  <figure className="group overflow-hidden rounded-2xl border border-[var(--wb-line)] bg-[var(--wb-card)] shadow-[0_24px_60px_-38px_rgba(18,21,61,0.55)]">
                     <div className="flex items-center gap-1.5 border-b border-[var(--wb-line)] bg-[#eef0f7] px-4 py-2.5">
                       <span className="size-2.5 rounded-full bg-[#ff5f57]" /><span className="size-2.5 rounded-full bg-[#febc2e]" /><span className="size-2.5 rounded-full bg-[#28c840]" />
                       <span className="ml-3 truncate text-xs text-[var(--wb-muted)]">{b.name}, generated {run.generated ?? "date unknown"}</span>
@@ -189,11 +210,12 @@ export function Dashboard() {
                     <figcaption className="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
                       <span className="wb-display flex items-center gap-2 text-lg font-semibold"><span className="size-3 rounded-full" style={{ background: b.color }} />{b.name}</span>
                       <span className="flex gap-5 text-sm text-[var(--wb-muted)]">
-                        <span><span className="wb-num text-xl font-semibold text-[var(--wb-ink)]">{Math.round(techScore(run) ?? 0)}</span> technical</span>
-                        <span><span className="wb-num text-xl font-semibold text-[var(--wb-ink)]">{one(designScore(run.tool))}</span> design</span>
+                        <span><CountUp value={techScore(run)} className="wb-num text-xl font-semibold text-[var(--wb-ink)]" /> technical</span>
+                        <span><CountUp value={designScore(run.tool)} decimals={1} className="wb-num text-xl font-semibold text-[var(--wb-ink)]" /> design</span>
                       </span>
                     </figcaption>
                   </figure>
+                  </TiltCard>
                 );
               })}
             </div>
@@ -206,14 +228,10 @@ export function Dashboard() {
               <h2 className="wb-display text-3xl font-bold tracking-tight">Technical quality</h2>
               <p className="max-w-2xl text-[var(--wb-muted)]">Google Lighthouse {runs[0]?.lighthouse.mobile.version}, median of {runs[0]?.lighthouse.mobile.runs} runs per page. 90 and above is good; below 50 is poor.</p>
             </div>
-            <div role="radiogroup" aria-label="Device" className="inline-flex rounded-full border border-[var(--wb-line)] bg-white p-1 text-sm">
-              {(["mobile", "desktop"] as const).map((d) => (
-                <button key={d} role="radio" aria-checked={device === d} onClick={() => setDevice(d)} className={`rounded-full px-4 py-1.5 capitalize transition-colors ${device === d ? "bg-[var(--wb-ink)] text-white" : "text-[var(--wb-muted)] hover:text-[var(--wb-ink)]"}`}>{d}</button>
-              ))}
-            </div>
+            <Segmented label="Device" value={device} onChange={setDevice} options={[{ value: "mobile", label: "Mobile" }, { value: "desktop", label: "Desktop" }]} />
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr]">
-            <div className="min-w-0 overflow-x-auto rounded-2xl border border-[var(--wb-line)] bg-white p-5">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr]">
+            <div className="min-w-0 self-start overflow-x-auto rounded-2xl border border-[var(--wb-line)] bg-white p-5">
               <div className="min-w-[520px]">
               <BarChart data={chartData} xDataKey="category" aspectRatio="16 / 9" barGap={0.3}>
                 <Grid horizontal rowTickValues={[50, 90]} strokeDasharray="4 4" />
@@ -227,29 +245,40 @@ export function Dashboard() {
               {runs.map((run) => {
                 const m = run.lighthouse[device].metrics;
                 const b = builder(run.tool);
+                const sc = run.lighthouse[device].scores;
+                const ringData = CATEGORIES.map((c, i) => ({ label: c.label, value: sc[c.key] ?? 0, maxValue: 100, color: ["#ff5e3a", "#16b39e", "#7c6cf0", "#f5a700"][i] }));
                 return (
-                  <div key={run.tool} className="grid gap-3 rounded-2xl border border-[var(--wb-line)] bg-white p-5">
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="wb-display flex items-center gap-2 font-semibold"><span className="size-2.5 rounded-full" style={{ background: b.color }} />{b.name}</span>
-                      <span className="flex gap-3 text-sm">
-                        {CATEGORIES.map((c) => <span key={c.key} title={c.label} className={`wb-num font-semibold ${lhTone(run.lighthouse[device].scores[c.key])}`}>{run.lighthouse[device].scores[c.key] ?? "—"}</span>)}
-                      </span>
-                    </div>
-                    <dl className="grid grid-cols-3 gap-2 text-sm">
-                      {[
-                        { label: "Largest paint", value: `${(m.lcpMs / 1000).toFixed(1)} s`, ok: m.lcpMs <= 2500 },
-                        { label: "Layout shift", value: m.cls.toFixed(2), ok: m.cls <= 0.1 },
-                        { label: "Blocking time", value: `${Math.round(m.tbtMs)} ms`, ok: m.tbtMs <= 200 },
-                      ].map((item) => (
-                        <div key={item.label} className="rounded-xl bg-[var(--wb-paper)] px-3 py-2">
-                          <dt className="text-xs text-[var(--wb-muted)]">{item.label}</dt>
-                          <dd className={`wb-num text-base font-semibold ${item.ok ? "text-[var(--wb-ink)]" : "text-red-600"}`}>{item.value}</dd>
+                  <div key={`${run.tool}-${device}`} className="grid gap-4 rounded-2xl border border-[var(--wb-line)] bg-white p-5 transition-shadow duration-300 hover:shadow-[0_24px_50px_-34px_rgba(18,21,61,0.5)] sm:grid-cols-[150px_1fr]">
+                    <div className="grid justify-items-center gap-2">
+                      <div className="relative">
+                        <RingChart data={ringData} size={156} strokeWidth={7} ringGap={3}>
+                          {ringData.map((_, i) => <Ring key={i} index={i} />)}
+                        </RingChart>
+                        <div className="pointer-events-none absolute inset-0 grid place-content-center justify-items-center">
+                          <CountUp value={avg(ringData.map((r) => r.value))} className="wb-num text-xl font-bold leading-none" />
+                          <span className="text-[10px] text-[var(--wb-muted)]">average</span>
                         </div>
-                      ))}
-                    </dl>
-                    <p className="text-xs text-[var(--wb-muted)]">
-                      {run.axe.rules.length} WCAG 2.2 rule failures, {run.validator.errors} HTML errors, {run.content.missingFacts.length + run.content.missingPages.length === 0 ? "brief fully covered" : `missing ${[...run.content.missingPages, ...run.content.missingFacts].join(", ")}`}
-                    </p>
+                      </div>
+                      <span className="wb-display flex items-center gap-2 font-semibold"><span className="size-2.5 rounded-full" style={{ background: b.color }} />{b.name}</span>
+                    </div>
+                    <div className="grid content-start gap-3">
+                      <ul className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                        {CATEGORIES.map((c, i) => (
+                          <li key={c.key} className="flex items-center justify-between gap-2">
+                            <span className="flex items-center gap-1.5 text-[var(--wb-muted)]"><span className="size-2 rounded-full" style={{ background: ringData[i].color }} />{c.label}</span>
+                            <span className={`wb-num font-semibold ${lhTone(sc[c.key])}`}>{sc[c.key] ?? "—"}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Bullet label="Largest contentful paint" value={m.lcpMs / 1000} unit=" s" good={2.5} poor={4} max={6} format={(v) => v.toFixed(1)} />
+                      <Bullet label="Cumulative layout shift" value={m.cls} unit="" good={0.1} poor={0.25} max={0.4} format={(v) => v.toFixed(2)} />
+                      <Bullet label="Total blocking time" value={m.tbtMs} unit=" ms" good={200} poor={600} max={1000} format={(v) => String(Math.round(v))} />
+                      <div className="flex flex-wrap gap-x-3 gap-y-1.5 border-t border-[var(--wb-line)] pt-3 text-xs">
+                        <span className="flex items-center gap-1.5"><Mark ok={run.axe.rules.length === 0} />{run.axe.rules.length} WCAG failures</span>
+                        <span className="flex items-center gap-1.5"><Mark ok={run.validator.errors === 0} />{run.validator.errors} HTML errors</span>
+                        {brief.requiredFacts.map((fact) => <span key={fact} className="flex items-center gap-1.5"><Mark ok={!run.content.missingFacts.includes(fact)} />{fact}</span>)}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
@@ -265,6 +294,33 @@ export function Dashboard() {
                 Each site is scored on its own, never side by side, from desktop and phone screenshots with builder names hidden. Scale 1 to 5. Judges that gave every site the same score are shown but not counted.
               </p>
             </div>
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+              <div className="grid place-items-center overflow-hidden rounded-2xl border border-[var(--wb-line)] bg-white p-4">
+                <RadarChart data={runs.map((run) => ({ label: builder(run.tool).name, color: builder(run.tool).color, values: Object.fromEntries(criteria.map((c) => [c.key, ((designScore(run.tool, c.key) ?? 0) / 5) * 100])) }))}
+                  metrics={criteria.map((c) => ({ key: c.key, label: c.label.replace(" and ", " & ") }))} size={440} levels={5} margin={92}>
+                  <RadarGrid />
+                  <RadarAxis />
+                  <RadarLabels fontSize={11} />
+                  {runs.map((run, i) => <RadarArea key={run.tool} index={i} color={builder(run.tool).color} showGlow />)}
+                </RadarChart>
+                <div className="flex gap-4 text-xs text-[var(--wb-muted)]">{runs.map((run) => <span key={run.tool} className="flex items-center gap-1.5"><span className="size-2.5 rounded-full" style={{ background: builder(run.tool).color }} />{builder(run.tool).name}</span>)}</div>
+              </div>
+              <div className="grid content-start gap-4 sm:grid-cols-2">
+                {runs.map((run) => {
+                  const value = designScore(run.tool);
+                  return (
+                    <div key={run.tool} className="grid justify-items-center gap-1 rounded-2xl border border-[var(--wb-line)] bg-white p-5">
+                      <ArcGauge value={value} max={5} color={builder(run.tool).color} label={`${builder(run.tool).name} design score`} />
+                      <span className="wb-display flex items-center gap-2 font-semibold"><span className="size-2.5 rounded-full" style={{ background: builder(run.tool).color }} />{builder(run.tool).name}</span>
+                    </div>
+                  );
+                })}
+                <div className="grid gap-3 rounded-2xl border border-[var(--wb-line)] bg-white p-5 sm:col-span-2">
+                  <h3 className="wb-display font-semibold">Where the judges land</h3>
+                  <JudgeDots judges={judges.map((j) => `${judgeName(j)}${counted.includes(j) ? "" : " (not counted)"}`)} rows={runs.map((run) => ({ name: builder(run.tool).name, color: builder(run.tool).color, scores: judges.map((j) => { const v = design.sites[run.tool]?.verdicts.find((x) => x.judge === j); return v ? avg(Object.values(v.scores)) : null; }) }))} />
+                </div>
+              </div>
+            </div>
             <div className="overflow-x-auto rounded-2xl border border-[var(--wb-line)] bg-white">
               <table className="w-full min-w-[520px] border-separate border-spacing-1 p-3 text-sm">
                 <thead>
@@ -277,29 +333,25 @@ export function Dashboard() {
                   {criteria.map((c) => (
                     <tr key={c.key}>
                       <td className="px-3 py-2">{c.label}</td>
-                      {runs.map((run) => { const s = designScore(run.tool, c.key); return <td key={run.tool} className="wb-num rounded-lg px-3 py-2 text-base font-semibold" style={heat(s)}>{one(s)}</td>; })}
+                      {runs.map((run) => {
+                        const value = designScore(run.tool, c.key);
+                        const id = `${run.tool}:${c.key}`;
+                        return (
+                          <td key={run.tool} tabIndex={0} onMouseEnter={() => setHoverCell(id)} onMouseLeave={() => setHoverCell(null)} onFocus={() => setHoverCell(id)} onBlur={() => setHoverCell(null)}
+                            className="wb-cell wb-num relative cursor-default rounded-lg px-3 py-2 text-base font-semibold" style={heat(value)}>
+                            {one(value)}
+                            {hoverCell === id && (
+                              <span role="tooltip" className="absolute left-1/2 top-full z-20 mt-2 grid w-48 -translate-x-1/2 gap-1 rounded-xl bg-[var(--wb-ink)] p-3 text-xs font-normal text-white shadow-xl">
+                                {(design.sites[run.tool]?.verdicts ?? []).map((v) => <span key={v.judge} className="flex justify-between gap-2"><span className="text-white/70">{judgeName(v.judge)}</span><span className="wb-num font-semibold">{v.scores[c.key]}</span></span>)}
+                              </span>
+                            )}
+                          </td>
+                        );
+                      })}
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {judges.map((judge) => (
-                <div key={judge} className={`grid content-start gap-3 rounded-2xl border border-[var(--wb-line)] bg-white p-5 ${counted.includes(judge) ? "" : "opacity-70"}`}>
-                  <div className="flex items-baseline justify-between"><h3 className="wb-display font-semibold">{judgeName(judge)}</h3>{!counted.includes(judge) && <span className="text-xs text-amber-700">not counted</span>}</div>
-                  {runs.map((run) => {
-                    const v = design.sites[run.tool]?.verdicts.find((x) => x.judge === judge);
-                    const value = v ? avg(Object.values(v.scores)) : null;
-                    return (
-                      <div key={run.tool} className="grid grid-cols-[6.5rem_1fr_2.5rem] items-center gap-2 text-sm">
-                        <span className="truncate text-[var(--wb-muted)]">{builder(run.tool).name}</span>
-                        <span className="h-2 overflow-hidden rounded-full bg-[var(--wb-paper)]"><span className="block h-full rounded-full" style={{ width: `${((value ?? 0) / 5) * 100}%`, background: builder(run.tool).color }} /></span>
-                        <span className="wb-num text-right font-semibold">{one(value)}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
             </div>
             <details className="rounded-2xl border border-[var(--wb-line)] bg-white p-5 text-sm">
               <summary className="cursor-pointer font-semibold">What the judges criticised</summary>
@@ -319,14 +371,14 @@ export function Dashboard() {
         )}
 
         <section className="relative overflow-hidden rounded-3xl bg-[var(--wb-signal)] px-6 py-12 text-[var(--wb-ink)] sm:px-12">
-          <svg aria-hidden viewBox="0 0 400 200" className="pointer-events-none absolute -bottom-10 -left-16 hidden h-48 opacity-[0.12] md:block"><rect x="0" y="30" width="380" height="22" rx="11" fill="#12153d" /><rect x="0" y="90" width="260" height="22" rx="11" fill="#12153d" /><rect x="0" y="150" width="320" height="22" rx="11" fill="#12153d" /></svg>
+
           <div className="relative grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-center">
             <div className="grid gap-3">
               <h2 className="wb-display text-3xl font-extrabold tracking-tight sm:text-4xl">Your eye is the final judge.</h2>
               <p className="max-w-xl text-lg">Browse each site blind, in random order, and score it on the same rubric as the AI judges. About five minutes per site.</p>
             </div>
             <div className="grid gap-3 md:justify-items-end">
-              <a href="/rate" className="w-fit rounded-full bg-[var(--wb-ink)] px-6 py-3 font-semibold text-white transition-transform hover:-translate-y-0.5">Rate the sites</a>
+              <a href="/rate" className="wb-press w-fit rounded-full bg-[var(--wb-ink)] px-6 py-3 font-semibold text-white">Rate the sites</a>
               <p className="text-sm">
                 {panel === null ? "Panel results load here." : panel.raters === 0 ? "No ratings yet. Be the first." : `${panel.raters} rater${panel.raters === 1 ? "" : "s"} so far: ${panel.sites.map((s) => `${builder(anonToTool[s.anonId] ?? "").name} ${one(avg(Object.values(s.means)))}`).join(", ")}`}
               </p>

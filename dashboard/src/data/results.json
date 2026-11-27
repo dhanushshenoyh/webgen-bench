@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-27T14:52:54.145Z",
+  "collectedAt": "2026-11-27T16:08:01.218Z",
   "briefs": {
     "demo-clinic-a": {
       "id": "demo-clinic-a",
@@ -26,9 +26,9 @@
       "brief": "demo-clinic-a",
       "tool": "radialpulse",
       "generated": "2026-11-27",
-      "notes": "dev runtime 105",
-      "evaluatedAt": "2026-11-27T14:36:43.833Z",
-      "siteHash": "c5e41c5f083d0437",
+      "notes": "dev runtime 110 (WebP images)",
+      "evaluatedAt": "2026-11-27T15:12:40.466Z",
+      "siteHash": "1afe17df6d8a6903",
       "pages": [
         "index.html",
         "contact.html"
@@ -36,13 +36,13 @@
       "lighthouse": {
         "mobile": {
           "scores": {
-            "performance": 76,
+            "performance": 100,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
           "metrics": {
-            "lcpMs": 17477.707,
+            "lcpMs": 1577.421,
             "cls": 0,
             "tbtMs": 0
           },
@@ -50,55 +50,49 @@
             {
               "page": "index.html",
               "scores": {
-                "performance": 75,
+                "performance": 100,
                 "accessibility": 100,
                 "best-practices": 100,
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 17477.707,
-                "fcpMs": 902.794,
+                "lcpMs": 1577.421,
+                "fcpMs": 906.241,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 902.794
+                "speedIndexMs": 906.241
               }
             },
             {
               "page": "contact.html",
               "scores": {
-                "performance": 76,
+                "performance": 100,
                 "accessibility": 100,
                 "best-practices": 100,
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 7502.303,
-                "fcpMs": 906.566,
+                "lcpMs": 902.93,
+                "fcpMs": 902.93,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 906.566
+                "speedIndexMs": 902.93
               }
             }
           ],
-          "failedAudits": [
-            {
-              "id": "largest-contentful-paint",
-              "title": "Largest Contentful Paint",
-              "category": "performance"
-            }
-          ],
+          "failedAudits": [],
           "runs": 5,
           "version": "13.6.0"
         },
         "desktop": {
           "scores": {
-            "performance": 91,
+            "performance": 100,
             "accessibility": 100,
             "best-practices": 100,
             "seo": 100
           },
           "metrics": {
-            "lcpMs": 2982.762,
+            "lcpMs": 363.861,
             "cls": 0,
             "tbtMs": 0
           },
@@ -106,43 +100,37 @@
             {
               "page": "index.html",
               "scores": {
-                "performance": 84,
+                "performance": 100,
                 "accessibility": 100,
                 "best-practices": 100,
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 2982.762,
-                "fcpMs": 244.07,
+                "lcpMs": 363.861,
+                "fcpMs": 245.556,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 244.07
+                "speedIndexMs": 245.556
               }
             },
             {
               "page": "contact.html",
               "scores": {
-                "performance": 97,
+                "performance": 100,
                 "accessibility": 100,
                 "best-practices": 100,
                 "seo": 100
               },
               "metrics": {
-                "lcpMs": 1321.963,
-                "fcpMs": 242.671,
+                "lcpMs": 258.027,
+                "fcpMs": 258.027,
                 "cls": 0,
                 "tbtMs": 0,
-                "speedIndexMs": 242.671
+                "speedIndexMs": 258.027
               }
             }
           ],
-          "failedAudits": [
-            {
-              "id": "largest-contentful-paint",
-              "title": "Largest Contentful Paint",
-              "category": "performance"
-            }
-          ],
+          "failedAudits": [],
           "runs": 5,
           "version": "13.6.0"
         }
@@ -310,5 +298,322 @@
         "forbiddenFound": []
       }
     }
-  ]
+  ],
+  "design": {
+    "demo-clinic-a": {
+      "rubric": "design-v1",
+      "judges": [
+        "anthropic/claude-opus-5.5",
+        "openai/gpt-5.5",
+        "google/gemini-3.1-pro-preview"
+      ],
+      "agreement": {
+        "allJudges": -0.25950633755837216,
+        "withoutAnthropic": -0.6386554621848739
+      },
+      "evaluatedAt": "2026-11-27T16:06:50.826Z",
+      "note": "Each site is scored on its own (absolute), from screenshots, with tool names hidden. Radial Pulse generates with an Anthropic model, so scores are also reported without the Anthropic judge.",
+      "sites": {
+        "radialpulse": {
+          "anonId": "7ad638df",
+          "verdicts": [
+            {
+              "judge": "anthropic/claude-opus-5.5",
+              "scores": {
+                "hierarchy": 4,
+                "typography": 3,
+                "color": 4,
+                "layout": 3,
+                "spacing": 3,
+                "imagery": 4,
+                "mobile": 4,
+                "consistency": 4,
+                "polish": 3,
+                "fit": 4
+              },
+              "issues": [
+                "Home services section on desktop: the 'You might ask' companion cards are equal height to the image cards but hold only two bullet lines, leaving large empty lavender areas with content floating mid-card.",
+                "Hero subcopy capitalises service names mid-sentence ('General consultations, Preventive-care visits'), which reads awkwardly; the footer repeats the same phrasing.",
+                "'Not sure where to start?' jump-link tiles have uneven label baselines: two-line titles sit higher than one-line titles, so the row looks misaligned.",
+                "Home hero on desktop leaves dead space above the headline. The fact strip below (Clinic/Where/Doctor) restates obvious info and dilutes hierarchy.",
+                "Contact page has no real contact action, which follows the brief, but the 'Find the clinic' CTA leads to a page that only says 'coming soon'.",
+                "On phone, the home jump-link tiles become a cramped two-column grid with heavy top rules."
+              ],
+              "strengths": [
+                "Coherent indigo/lavender palette on an off-white base, with a dark footer that gives clear surface rhythm.",
+                "Consistent content width, rounded-card language and small-caps eyebrow labels across both pages.",
+                "Original, relevant clinic photography with consistent rounded crops.",
+                "Handles unknown details honestly with graceful placeholders and an urgent-care notice.",
+                "Mobile layouts restack sensibly, with readable text, a Menu button and full-width cards."
+              ]
+            },
+            {
+              "judge": "openai/gpt-5.5",
+              "scores": {
+                "hierarchy": 4,
+                "typography": 4,
+                "color": 4,
+                "layout": 4,
+                "spacing": 4,
+                "imagery": 4,
+                "mobile": 4,
+                "consistency": 4,
+                "polish": 4,
+                "fit": 4
+              },
+              "issues": [
+                "The home service area uses large paired cards, especially the lavender 'You might ask' panels, with a lot of empty space on desktop.",
+                "Several secondary sections rely on similar card and list patterns, so the middle and lower home page can feel somewhat template-like despite being clean.",
+                "The contact page's desktop visit/FAQ area has very wide horizontal gaps, making the accordions feel a little isolated from their heading.",
+                "The photography is relevant and high quality, but it reads as generic clinic stock imagery and some crops feel more decorative than informative.",
+                "A few labels and phrases feel slightly awkward or over-styled, such as repeated title-case service names inside sentences and many small uppercase category labels."
+              ],
+              "strengths": [
+                "The main hero messages on both pages are clear, calm and immediately appropriate for a general-care clinic.",
+                "The purple and lavender visual system is cohesive, readable and consistently applied across cards, buttons, navigation and footer.",
+                "The site uses graceful placeholders for unknown address, phone and hours instead of inventing details.",
+                "Mobile layouts are comfortably reflowed with readable text, large controls and no obvious overflow.",
+                "The footer, navigation, emergency guidance and service links give visitors sensible next steps without adding a nonfunctional appointment form."
+              ]
+            },
+            {
+              "judge": "google/gemini-3.1-pro-preview",
+              "scores": {
+                "hierarchy": 5,
+                "typography": 5,
+                "color": 5,
+                "layout": 5,
+                "spacing": 5,
+                "imagery": 5,
+                "mobile": 5,
+                "consistency": 5,
+                "polish": 5,
+                "fit": 5
+              },
+              "issues": [
+                "No concrete visible issues exist; the design is executed to a professional studio standard, perfectly fulfilling the brief with exceptional polish and coherence across all breakpoints."
+              ],
+              "strengths": [
+                "Graceful and creative handling of missing contact information using well-designed placeholder text and layout.",
+                "Highly coherent visual language with a calming, professional color palette perfectly suited for a medical clinic.",
+                "Excellent typographic hierarchy and spacing rhythm that makes scanning and reading effortless on both desktop and mobile."
+              ]
+            }
+          ]
+        },
+        "replit": {
+          "anonId": "1523e006",
+          "verdicts": [
+            {
+              "judge": "anthropic/claude-opus-5.5",
+              "scores": {
+                "hierarchy": 4,
+                "typography": 3,
+                "color": 4,
+                "layout": 4,
+                "spacing": 4,
+                "imagery": 3,
+                "mobile": 4,
+                "consistency": 4,
+                "polish": 3,
+                "fit": 4
+              },
+              "issues": [
+                "The serif display face looks like a system Times/Georgia fallback, so headings feel generic and slightly dated next to the Noto Sans body.",
+                "The clinician 'portrait' is a stethoscope icon tile whose 'Dr. Demo A' caption sits tight against the circle and looks cramped; on desktop the tile floats with excess space beside the text column.",
+                "The services grid on desktop has unequal card widths: the first card is wider and tinted while the other two are white.",
+                "The contact page's six placeholder cards are all 'To be confirmed', so a large grid area repeats the same italic text with little visual interest.",
+                "Some sections have uneven vertical spacing: large empty bands appear above the CTA band and above the 'Please note' disclaimer on the contact page.",
+                "The footer's bright underlined links look like browser defaults compared with the more refined components elsewhere."
+              ],
+              "strengths": [
+                "A calm lavender, cream, sage and peach palette suits a general-care clinic, with the purple accent used consistently on CTAs.",
+                "The hero has a clear headline, supporting copy, primary and secondary CTAs, and an original illustrated room scene.",
+                "Placeholders are handled gracefully and honestly, with no fabricated hours, phone or address, and no fake booking form.",
+                "Alternating surface colours give a clear section rhythm, and the content width stays consistent across sections.",
+                "The phone layout stacks cleanly with full-width buttons, a labelled Menu button and comfortable text sizes.",
+                "Emergency guidance and visit-preparation content are useful and well placed."
+              ]
+            },
+            {
+              "judge": "openai/gpt-5.5",
+              "scores": {
+                "hierarchy": 4,
+                "typography": 4,
+                "color": 4,
+                "layout": 4,
+                "spacing": 4,
+                "imagery": 3,
+                "mobile": 4,
+                "consistency": 4,
+                "polish": 4,
+                "fit": 5
+              },
+              "issues": [
+                "Several mid-page areas rely heavily on similar rounded cards, especially the services and contact-detail grids, so parts of the site feel a little template-like.",
+                "The illustrations and icons are clean but quite simple and generic; the clinician graphic in particular feels more like a placeholder than a fully expressive brand asset.",
+                "Some vertical spacing is very generous on desktop and mobile, which creates calmness but also pushes practical details farther down the page than necessary.",
+                "A few finishing details, such as the default-looking underlined footer links and very sparse placeholder cards, are less refined than the strongest parts of the design."
+              ],
+              "strengths": [
+                "The site handles unknown phone, address, hours, booking and reviews gracefully without inventing information.",
+                "The visual language is calm, coherent and appropriate for a general-care clinic.",
+                "Headings, calls to action and section labels create a clear reading order on both pages.",
+                "The mobile layouts are readable and intentionally stacked, with large tap targets and a visible menu control.",
+                "The two pages share a consistent type, colour, card, button and footer system."
+              ]
+            },
+            {
+              "judge": "google/gemini-3.1-pro-preview",
+              "scores": {
+                "hierarchy": 5,
+                "typography": 5,
+                "color": 5,
+                "layout": 5,
+                "spacing": 5,
+                "imagery": 5,
+                "mobile": 4,
+                "consistency": 5,
+                "polish": 4,
+                "fit": 5
+              },
+              "issues": [
+                "The mobile homepage screenshots omit the 'Preparing for a visit' and main CTA sections, creating an abrupt jump in the user journey.",
+                "The 'Full visit preparation ->' link uses a basic text arrow (hyphen and greater-than sign) rather than a polished vector icon.",
+                "Footer navigation links rely on default browser underlines that sit tight against the text, missing a final touch of typographic refinement."
+              ],
+              "strengths": [
+                "The color palette and typography establish a highly professional, calming, and trustworthy tone perfectly suited for a medical practice.",
+                "The requirement for 'graceful placeholders' is executed brilliantly, using styled cards that clearly communicate missing information without looking like errors.",
+                "Custom illustrations and a rigorous spacing system create a cohesive, premium visual language across all viewports."
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rubric": {
+    "id": "design-v1",
+    "criteria": [
+      {
+        "key": "hierarchy",
+        "label": "Visual hierarchy",
+        "question": "Is it immediately clear what matters most on each screen and where to look next?",
+        "anchors": {
+          "1": "No clear focal point; everything competes.",
+          "3": "Main message is findable but secondary content competes or is buried.",
+          "5": "Every screen has one clear focus and an obvious reading order."
+        }
+      },
+      {
+        "key": "typography",
+        "label": "Typography",
+        "question": "Are type choices, scale, weights, line length and line spacing deliberate and readable?",
+        "anchors": {
+          "1": "Default or clashing type, cramped or overly long lines.",
+          "3": "Readable but generic; scale or weights inconsistent in places.",
+          "5": "Distinctive, consistent type system with comfortable reading at every size."
+        }
+      },
+      {
+        "key": "color",
+        "label": "Colour",
+        "question": "Is the palette coherent, purposeful and readable, with an accent used with restraint?",
+        "anchors": {
+          "1": "Clashing, muddy or low-contrast colours.",
+          "3": "Coherent but bland or accent overused.",
+          "5": "Confident, coherent palette that supports meaning and contrast."
+        }
+      },
+      {
+        "key": "layout",
+        "label": "Layout and composition",
+        "question": "Are sections composed with variety and balance, without empty or overcrowded areas?",
+        "anchors": {
+          "1": "Broken, cramped or mostly empty layouts.",
+          "3": "Functional but repetitive or template-like sections.",
+          "5": "Varied, balanced compositions that each suit their content."
+        }
+      },
+      {
+        "key": "spacing",
+        "label": "Spacing and alignment",
+        "question": "Are spacing and alignment consistent, with a clear rhythm between and within sections?",
+        "anchors": {
+          "1": "Misaligned elements and erratic gaps.",
+          "3": "Mostly aligned with some inconsistent gaps.",
+          "5": "Precise alignment and a consistent spacing rhythm throughout."
+        }
+      },
+      {
+        "key": "imagery",
+        "label": "Imagery and graphics",
+        "question": "Do images and graphics look high quality, fit the subject and sit well in the layout?",
+        "anchors": {
+          "1": "Missing, broken, distorted or irrelevant visuals.",
+          "3": "Acceptable visuals that feel generic or awkwardly cropped.",
+          "5": "High-quality, relevant visuals integrated with the layout."
+        }
+      },
+      {
+        "key": "mobile",
+        "label": "Mobile adaptation",
+        "question": "Is the phone layout deliberately composed rather than shrunk, with readable text and usable controls?",
+        "anchors": {
+          "1": "Overflow, tiny text or unusable controls on phone.",
+          "3": "Works on phone but feels like a squeezed desktop.",
+          "5": "Phone layout is composed for the small screen and comfortable to use."
+        }
+      },
+      {
+        "key": "consistency",
+        "label": "Consistency",
+        "question": "Do pages share one coherent visual language (components, colours, type, spacing)?",
+        "anchors": {
+          "1": "Pages look like different sites.",
+          "3": "Mostly consistent with noticeable mismatches.",
+          "5": "Fully coherent system across pages and breakpoints."
+        }
+      },
+      {
+        "key": "polish",
+        "label": "Polish and craft",
+        "question": "Are details finished: buttons, icons, borders, states, edges, footer?",
+        "anchors": {
+          "1": "Visibly unfinished or broken details.",
+          "3": "Clean overall with several rough details.",
+          "5": "Refined details everywhere; nothing looks accidental."
+        }
+      },
+      {
+        "key": "fit",
+        "label": "Fit for purpose",
+        "question": "Does the design suit the business in the brief and help a visitor do what they came for?",
+        "anchors": {
+          "1": "Wrong tone for the business; key actions hard to find.",
+          "3": "Appropriate but generic; actions present but not prominent.",
+          "5": "Tone clearly suits the business and the key actions are obvious."
+        }
+      }
+    ]
+  },
+  "panel": {
+    "demo-clinic-a": [
+      {
+        "anonId": "7ad638df",
+        "pages": [
+          "index.html",
+          "contact.html"
+        ]
+      },
+      {
+        "anonId": "1523e006",
+        "pages": [
+          "index.html",
+          "contact.html"
+        ]
+      }
+    ]
+  }
 }

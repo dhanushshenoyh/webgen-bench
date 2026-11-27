@@ -12,6 +12,7 @@ import { RadarAxis } from "@/components/charts/radar-axis";
 import { RadarLabels } from "@/components/charts/radar-labels";
 import { RadarArea } from "@/components/charts/radar-area";
 import raw from "@/data/results.json";
+import { DesignSection } from "@/components/design-section";
 
 type Rule = { id: string; impact: string | null; help: string; wcag: string[]; nodes: number; pages: string[] };
 type Scores = Record<"performance" | "accessibility" | "best-practices" | "seo", number | null>;
@@ -87,7 +88,7 @@ export function Dashboard() {
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">webgen-bench · same brief, same standards</p>
         <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">How AI website builders compare</h1>
         <p className="max-w-3xl text-muted-foreground">
-          Each builder receives the identical brief. Every result is scored with published, widely used tools: Google Lighthouse, axe-core for WCAG 2.2 AA and the W3C HTML validator. Scores are medians of repeated runs.
+          Each builder receives the identical brief. Technical quality is scored with published, widely used tools: Google Lighthouse, axe-core for WCAG 2.2 AA and the W3C HTML validator. Design quality is scored blind by AI judges from three vendors and by a human panel.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <label className="text-sm text-muted-foreground" htmlFor="brief">Brief</label>
@@ -225,10 +226,12 @@ export function Dashboard() {
         </div>
       </Section>
 
+      <DesignSection briefId={briefId} toolName={toolName} colors={Object.fromEntries(runs.map((run, index) => [run.tool, TOOL_COLORS[index % TOOL_COLORS.length]]))} />
+
       <footer className="grid gap-2 border-t pt-6 text-xs text-muted-foreground">
         <p>Tools: Lighthouse {runs[0]?.lighthouse.mobile.version}, {runs[0]?.lighthouse.mobile.runs} runs per page and device (median); axe-core {runs[0]?.axe.version}; {runs[0]?.validator.name}.</p>
         <p>Every site is served from the same local static server. Site hashes: {runs.map((run) => `${toolName(run.tool)} ${run.siteHash}`).join(" · ")}. Collected {new Date(data.collectedAt).toUTCString()}.</p>
-        <p>Design-quality scores (rubric judges and a blind human panel) are not shown yet.</p>
+        <p>Methodology, sources and limits: <a className="underline" href="https://github.com/dhanushshenoyh/webgen-bench/blob/main/METHODOLOGY.md">METHODOLOGY.md</a>.</p>
       </footer>
     </main>
   );

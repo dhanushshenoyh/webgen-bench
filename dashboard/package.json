@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/collect.mjs && next dev",
-    "build": "node scripts/collect.mjs && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "collect": "node scripts/collect.mjs"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@number-flow/react": "^0.6.2",
+    "@vercel/blob": "2.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "d3-array": "^3.2.5",
@@ -38,5 +39,8 @@
     "tailwindcss": "4.3.3",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@12.15.0"
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": "24.x"
+  }
 }

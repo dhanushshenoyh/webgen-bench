@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "brief": "stride-physio",
+  "briefVersion": 1,
+  "tool": "replit-r2",
+  "generated": "2026-11-28",
+  "notes": null,
+  "evaluatedAt": "2026-11-28T03:02:58.018Z",
+  "siteHash": "e0708a0502870f2b",
+  "pages": [
+    "index.html"
+  ],
+  "lighthouse": [
+    {
+      "page": "index.html",
+      "formFactor": "mobile",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 88,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 3602.796,
+        "fcpMs": 2200.302,
+        "cls": 0,
+        "tbtMs": 1.5,
+        "speedIndexMs": 2200.302
+      },
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "category": "performance"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "category": "performance"
+        },
+        {
+          "id": "meta-viewport",
+          "title": "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than 5.",
+          "category": "accessibility"
+        },
+        {
+          "id": "landmark-one-main",
+          "title": "Document does not have a main landmark.",
+          "category": "accessibility"
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "formFactor": "desktop",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 768.599,
+        "fcpMs": 766.165,
+        "cls": 0,
+        "tbtMs": 0,
+        "speedIndexMs": 766.165
+      },
+      "failedAudits": [
+        {
+          "id": "meta-viewport",
+          "title": "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than 5.",
+          "category": "accessibility"
+        },
+        {
+          "id": "landmark-one-main",
+          "title": "Document does not have a main landmark.",
+          "category": "accessibility"
+        }
+      ]
+    }
+  ],
+  "axe": {
+    "axeVersion": "4.14.0",
+    "widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      "index.html"
+    ],
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "help": "Zooming and scaling must not be disabled",
+        "nodes": 1,
+        "page": "index.html",
+        "width": 1440,
+        "wcag": [
+          "1.4.4"
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "help": "Zooming and scaling must not be disabled",
+        "nodes": 1,
+        "page": "index.html",
+        "width": 390,
+        "wcag": [
+          "1.4.4"
+        ]
+      }
+    ],
+    "passes": 30,
+    "incomplete": 0
+  },
+  "validator": {
+    "validator": "W3C Nu HTML Checker 26.11.9 (524d973)",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  "content": {
+    "pages": [
+      "index.html"
+    ],
+    "missingPages": [],
+    "missingFacts": [
+      "Stride Physio and Sports Rehab",
+      "Bengaluru",
+      "Dr. Arjun Rao",
+      "Dr. Meera Iyer",
+      "Sports injury rehabilitation",
+      "Back and neck pain",
+      "Post-surgery rehabilitation",
+      "Posture and ergonomics",
+      "Dry needling",
+      "221 Indiranagar 100 Feet Road"
+    ],
+    "forbiddenFound": []
+  },
+  "checkedOn": "rendered DOM (text and HTML) after JavaScript runs",
+  "environment": {
+    "node": "v22.23.1",
+    "platform": "linux"
+  }
+}

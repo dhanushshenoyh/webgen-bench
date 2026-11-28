@@ -14,6 +14,7 @@ import { RadarAxis } from "@/components/charts/radar-axis";
 import { RadarLabels } from "@/components/charts/radar-labels";
 import { RadarArea } from "@/components/charts/radar-area";
 import { ArcGauge, Bullet, CountUp, JudgeDots, Mark, ScrollProgress, Segmented, TiltCard } from "@/components/viz";
+import { Overall } from "@/components/overall";
 import raw from "@/data/results.json";
 
 type Rule = { id: string; impact: string | null; help: string; wcag: string[]; nodes: number; pages: string[] };
@@ -28,7 +29,7 @@ type Run = {
 };
 type Verdict = { judge: string; scores: Record<string, number>; issues: string[]; strengths: string[] };
 type DesignBrief = { judges: string[]; agreement: { allJudges: number | null; withoutAnthropic: number | null }; sites: Record<string, { anonId: string; verdicts: Verdict[] }> };
-type Brief = { id: string; title: string; prompt: string; requiredPages: string[]; requiredFacts: string[] };
+type Brief = { id: string; title: string; prompt: string; requiredPages: string[]; requiredFacts: string[]; heldOut?: boolean };
 type Panel = { raters: number; roles: Record<string, number>; sites: { anonId: string; raters: number; means: Record<string, number | null>; preferred: number }[] };
 const data = raw as unknown as {
   collectedAt: string; briefs: Record<string, Brief>; runs: Run[]; design: Record<string, DesignBrief>;
@@ -48,7 +49,13 @@ const BUILDERS: Record<string, { name: string; color: string }> = {
   v0: { name: "v0", color: "#7c6cf0" },
   bolt: { name: "Bolt", color: "#f5a700" },
 };
-const builder = (tool: string) => BUILDERS[tool] ?? { name: tool, color: "#8a93b8" };
+const builderKey = (tool: string) => tool.replace(/-r\d+$/, "");
+const runNumber = (tool: string) => Number(tool.match(/-r(\d+)$/)?.[1] ?? 0);
+const builder = (tool: string) => {
+  const base = BUILDERS[builderKey(tool)] ?? { name: builderKey(tool), color: "#8a93b8" };
+  const run = runNumber(tool);
+  return run ? { name: `${base.name} run ${run}`, color: run > 1 ? `color-mix(in oklab, ${base.color} 62%, #ffffff)` : base.color } : base;
+};
 const JUDGE_VENDORS: Record<string, string> = { anthropic: "Claude", openai: "GPT", google: "Gemini", xai: "Grok" };
 const judgeName = (id: string) => `${JUDGE_VENDORS[id.split("/")[0]] ?? id.split("/")[0]} ${id.split("/")[1]?.replace(/^(claude|gpt|gemini)-/, "").replace("-preview", "") ?? ""}`;
 const avg = (values: (number | null | undefined)[]) => {
@@ -87,7 +94,7 @@ function Lane({ name, color, value, max, label, delay }: { name: string; color: 
 
 export function Dashboard() {
   const briefIds = Object.keys(data.briefs);
-  const [briefId, setBriefId] = useState(briefIds[0]);
+  const [briefId, setBriefId] = useState(briefIds.find((id) => data.briefs[id].heldOut) ?? briefIds[0]);
   const [device, setDevice] = useState<"mobile" | "desktop">("mobile");
   const [panel, setPanel] = useState<Panel | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -149,7 +156,7 @@ export function Dashboard() {
             <div className="flex flex-wrap items-center gap-3">
               {briefIds.length > 1 && (
                 <select aria-label="Brief" value={briefId} onChange={(e) => setBriefId(e.target.value)} className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm text-white">
-                  {briefIds.map((id) => <option key={id} value={id} className="text-black">{data.briefs[id].title}</option>)}
+                  {briefIds.map((id) => <option key={id} value={id} className="text-black">{data.briefs[id].title}{data.briefs[id].heldOut ? "" : " (tuning brief)"}</option>)}
                 </select>
               )}
               <details className="text-sm">
@@ -182,6 +189,7 @@ export function Dashboard() {
       </section>
 
       <main className="mx-auto grid max-w-6xl gap-20 px-4 py-16 sm:px-6">
+        <Overall briefs={Object.values(data.briefs)} runs={data.runs} design={data.design} builderKey={builderKey} label={(key) => BUILDERS[key] ?? { name: key, color: "#8a93b8" }} />
         {design && (
           <section className="grid gap-6">
             <div className="grid gap-2">

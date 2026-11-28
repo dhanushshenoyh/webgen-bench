@@ -7,7 +7,7 @@ const briefs = {};
 for (const file of await readdir(join(root, "briefs"))) {
   if (!file.endsWith(".json")) continue;
   const brief = JSON.parse(await readFile(join(root, "briefs", file), "utf8"));
-  briefs[brief.id] = { id: brief.id, title: brief.title, version: brief.version, prompt: brief.prompt, requiredPages: brief.requiredPages, requiredFacts: brief.requiredFacts };
+  briefs[brief.id] = { id: brief.id, title: brief.title, version: brief.version, prompt: brief.prompt, requiredPages: brief.requiredPages, requiredFacts: brief.requiredFacts, heldOut: Boolean(brief.heldOut) };
 }
 
 const avg = (values) => {

@@ -1,0 +1,13 @@
+{
+  "builder": "replit",
+  "createdAt": "2026-11-28",
+  "method": "Replit MCP create_app_from_prompt, app_stack react_website, appDescription = brief prompt verbatim (run 2 differs only by app name)",
+  "runs": [
+    { "brief": "sunrise-dental", "run": 1, "replId": "7e4cc1d7-cb3a-41ae-aebc-c8924bd4e149" },
+    { "brief": "little-steps", "run": 1, "replId": "a1f15e2a-7e12-41d7-a543-c8211e67bc80" },
+    { "brief": "stride-physio", "run": 1, "replId": "be15f9ce-5b30-4bbe-aa6f-d11bf04f4ae8" },
+    { "brief": "sunrise-dental", "run": 2, "replId": "75b809a5-416e-4795-a576-409548936df1" },
+    { "brief": "little-steps", "run": 2, "replId": "4332ba75-2d23-4054-bb53-f5cdb96ced01" },
+    { "brief": "stride-physio", "run": 2, "replId": "3c8aca01-6187-4a36-a93e-27e672e4f488" }
+  ]
+}

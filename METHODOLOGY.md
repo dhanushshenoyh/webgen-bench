@@ -18,7 +18,7 @@ This answers the "different sections" objection: content is fixed by the brief, 
 | HTML conformance | W3C Nu HTML Checker (vnu.jar), offline | WHATWG HTML Living Standard | Each page |
 | Brief coverage | webgen-bench (our script) | The brief's required pages and facts | Visible text of all pages |
 
-Every site is served by the same local static server, so hosting differences do not affect scores.
+Every site is served by the same local static server, so hosting differences do not affect scores. The home page is loaded at the site root (`/`), the address a visitor uses; client-side routers in framework apps show a not-found page at `/index.html`. Brief coverage and HTML conformance are checked on the rendered page after JavaScript runs, so framework apps are judged on what visitors see, not their empty HTML shell. Published framework apps are mirrored from their public URL with all JavaScript, CSS and images they reference; scripts the platform injects (for example Replit's `i.replit.com/script.js`) are kept, because visitors receive them too.
 
 ## 3. Design quality (rubric and people) — in progress
 
@@ -26,7 +26,11 @@ Every site is served by the same local static server, so hosting differences do 
 - **Several judges:** three models from different vendors. A judge from the same vendor as a tool's own model is reported separately. Agreement between judges is reported as Krippendorff's alpha.
 - **Blind human panel:** raters see sites without tool names, in random order, and score them with the 4-item VisAWI-S visual aesthetics scale plus a short task check. Pairwise preferences are combined with a Bradley–Terry model with confidence intervals, the method used by Arena.
 
-## 4. What the numbers do not claim
+## 4. Held-out briefs and repeated runs
+
+Briefs marked `heldOut` were written after the generator under test was last tuned and are never used to tune it. Each builder generates each held-out brief at least twice; results report the average and the range across runs. The Demo Clinic A brief was used while tuning Radial Pulse, so it is labelled a tuning brief and kept out of the held-out averages.
+
+## 5. What the numbers do not claim
 
 - axe-core finds about 57% of accessibility issues by volume (Deque's own study), not full WCAG conformance. Manual review is still needed for a conformance claim.
 - Lighthouse lab scores vary between runs; medians of 5 runs reduce but do not remove that. Small differences (a few points) are not meaningful.

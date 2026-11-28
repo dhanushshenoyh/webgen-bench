@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "brief": "little-steps",
+  "briefVersion": 1,
+  "tool": "replit-r1",
+  "generated": "2026-11-28",
+  "notes": null,
+  "evaluatedAt": "2026-11-28T02:59:03.745Z",
+  "siteHash": "77604ff694d88e23",
+  "pages": [
+    "index.html"
+  ],
+  "lighthouse": [
+    {
+      "page": "index.html",
+      "formFactor": "mobile",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 3002.822,
+        "fcpMs": 2204.026,
+        "cls": 0.005,
+        "tbtMs": 0,
+        "speedIndexMs": 2204.026
+      },
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "category": "performance"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "category": "performance"
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "formFactor": "desktop",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 705.502,
+        "fcpMs": 625.144,
+        "cls": 0.009,
+        "tbtMs": 0,
+        "speedIndexMs": 625.144
+      },
+      "failedAudits": []
+    }
+  ],
+  "axe": {
+    "axeVersion": "4.14.0",
+    "widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      "index.html"
+    ],
+    "violations": [
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "help": "Elements must have their visible text as part of their accessible name",
+        "nodes": 1,
+        "page": "index.html",
+        "width": 1440,
+        "wcag": [
+          "2.5.3"
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "help": "Elements must have their visible text as part of their accessible name",
+        "nodes": 1,
+        "page": "index.html",
+        "width": 390,
+        "wcag": [
+          "2.5.3"
+        ]
+      }
+    ],
+    "passes": 40,
+    "incomplete": 0
+  },
+  "validator": {
+    "validator": "W3C Nu HTML Checker 26.11.9 (524d973)",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  "content": {
+    "pages": [
+      "index.html"
+    ],
+    "missingPages": [],
+    "missingFacts": [
+      "Dr. Kavya Joshi",
+      "Ms. Neha Kulkarni",
+      "Newborn and well-baby checks",
+      "Vaccinations",
+      "Growth and nutrition advice",
+      "Fever and illness visits",
+      "Adolescent health"
+    ],
+    "forbiddenFound": []
+  },
+  "checkedOn": "rendered DOM (text and HTML) after JavaScript runs",
+  "environment": {
+    "node": "v22.23.1",
+    "platform": "linux"
+  }
+}

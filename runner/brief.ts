@@ -13,9 +13,11 @@ export async function sitePages(dir: string): Promise<string[]> {
 }
 
 /** Checks the brief's required pages and facts in visible text, so every tool is held to the same content. */
-export async function checkBrief(dir: string, brief: Brief): Promise<BriefResult> {
+export async function checkBrief(dir: string, brief: Brief, renderedText?: string[]): Promise<BriefResult> {
   const pages = await sitePages(dir);
-  const text = (await Promise.all(pages.map((page) => readFile(join(dir, page), "utf8")))).map(visibleText).join(" ");
+  const text = renderedText
+    ? renderedText.join(" ").replace(/\s+/g, " ").replace(/[’‘]/g, "'").toLowerCase()
+    : (await Promise.all(pages.map((page) => readFile(join(dir, page), "utf8")))).map(visibleText).join(" ");
   return {
     pages,
     missingPages: brief.requiredPages.filter((page) => !pages.includes(page)),

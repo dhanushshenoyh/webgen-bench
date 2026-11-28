@@ -1,0 +1,101 @@
+{
+  "id": "sunrise-dental",
+  "title": "Sunrise Dental Studio (fictional dental clinic)",
+  "business": {
+    "name": "Sunrise Dental Studio",
+    "category_label": "Dental clinic",
+    "city": "Kochi",
+    "address": "14 Lotus Lane, Panampilly Nagar, Kochi, Kerala 682036",
+    "description": "A fictional family dental clinic in Kochi focused on gentle, preventive dentistry for adults and children.",
+    "doctors": [
+      [
+        "Dr. Anjali Menon",
+        "BDS, MDS (Prosthodontics)"
+      ],
+      [
+        "Dr. Rahul Varghese",
+        "BDS"
+      ]
+    ],
+    "services": [
+      [
+        "Dental check-up and cleaning",
+        "Examination, scaling and polishing, with advice on home care."
+      ],
+      [
+        "Tooth-coloured fillings",
+        "Composite fillings matched to the natural tooth shade."
+      ],
+      [
+        "Root canal treatment",
+        "Treatment to save an infected or badly decayed tooth."
+      ],
+      [
+        "Clear aligners",
+        "Removable aligners to straighten teeth gradually."
+      ],
+      [
+        "Children's dentistry",
+        "Check-ups, fluoride and sealants for children."
+      ]
+    ],
+    "hours": {
+      "monday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "tuesday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "wednesday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "thursday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "friday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "saturday": {
+        "closed": false,
+        "open": "09:00",
+        "close": "19:00"
+      },
+      "sunday": {
+        "closed": true,
+        "open": null,
+        "close": null
+      }
+    }
+  },
+  "prompt": "Build a polished, accessible website for Sunrise Dental Studio, a fictional dental clinic in Kochi. A fictional family dental clinic in Kochi focused on gentle, preventive dentistry for adults and children. Clinicians: Dr. Anjali Menon, BDS, MDS (Prosthodontics); Dr. Rahul Varghese, BDS. Services: Dental check-up and cleaning (Examination, scaling and polishing, with advice on home care.); Tooth-coloured fillings (Composite fillings matched to the natural tooth shade.); Root canal treatment (Treatment to save an infected or badly decayed tooth.); Clear aligners (Removable aligners to straighten teeth gradually.); Children's dentistry (Check-ups, fluoride and sealants for children.). Address: 14 Lotus Lane, Panampilly Nagar, Kochi, Kerala 682036. Opening hours: Monday to Saturday 09:00–19:00, closed Sunday. Phone number, email, booking system, prices, reviews and public domain are unknown: do not invent them; give visitors a graceful way to find the clinic and its hours instead. Choose the pages and layout that serve patients best. Include working navigation, an accessible mobile menu and the clinic's real details above. Do not add a contact or booking form without a working backend. Deliver a static website (HTML/CSS/JS, or a framework app that builds to static files). Do not use external analytics, authentication or databases.",
+  "version": 1,
+  "requiredPages": [
+    "index.html"
+  ],
+  "requiredFacts": [
+    "Sunrise Dental Studio",
+    "Kochi",
+    "Dr. Anjali Menon",
+    "Dr. Rahul Varghese",
+    "Dental check-up and cleaning",
+    "Tooth-coloured fillings",
+    "Root canal treatment",
+    "Clear aligners",
+    "Children's dentistry",
+    "14 Lotus Lane"
+  ],
+  "forbidden": [
+    "lorem ipsum"
+  ],
+  "heldOut": true
+}

@@ -1,11 +1,12 @@
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, readdir, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { createHash } from "node:crypto";
 import { join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { runAxe } from "./axe.ts";
 import { checkBrief, sitePages, type Brief } from "./brief.ts";
 import { runLighthouse } from "./lighthouse.ts";
-import { serveSite } from "./serve.ts";
+import { pageUrl, serveSite } from "./serve.ts";
 import { runValidator } from "./validator.ts";
 import { captureSite } from "./capture.ts";
 import { judgeSite, krippendorffAlpha, type Rubric, type Verdict } from "./judge.ts";
@@ -33,21 +34,28 @@ async function run() {
   const server = await serveSite(dir);
   console.log(`${values.tool}: ${pages.length} pages, ${runs} Lighthouse runs per page and form factor`);
   try {
-    const lighthouse = [];
-    for (const page of pages) {
+    const siteHash = await hashDir(dir);
+    const previous = JSON.parse(await readFile(`results/${brief.id}/${values.tool}.json`, "utf8").catch(() => "null"));
+    const reuse = previous?.siteHash === siteHash && previous?.lighthouseUrl === "root" && previous?.lighthouse?.length && previous.lighthouse[0].runs === runs;
+    const lighthouse = reuse ? previous.lighthouse : [];
+    if (reuse) console.log("  lighthouse: reusing results for identical site files");
+    for (const page of reuse ? [] : pages) {
       for (const formFactor of ["mobile", "desktop"] as const) {
-        lighthouse.push({ page, ...(await runLighthouse(`${server.origin}/${page}`, formFactor, runs)) });
+        lighthouse.push({ page, ...(await runLighthouse(pageUrl(server.origin, page), formFactor, runs)) });
         console.log(`  lighthouse ${page} ${formFactor} done`);
       }
     }
     const axe = await runAxe(server.origin, pages);
     console.log(`  axe: ${axe.violations.length} violations`);
-    const validator = await runValidator(dir, pages);
+    // Validate the rendered DOM so framework apps are checked on what they actually show, not their empty shell.
+    const renderedDir = await mkdtemp(join(tmpdir(), "wb-rendered-"));
+    for (const item of axe.rendered) await writeFile(join(renderedDir, item.page), item.html);
+    const validator = await runValidator(renderedDir, axe.rendered.map((item) => item.page));
     console.log(`  validator: ${validator.errors} errors`);
-    const content = await checkBrief(dir, brief);
+    const content = await checkBrief(dir, brief, axe.rendered.map((item) => item.text));
     const result = {
       schema: 1, brief: brief.id, briefVersion: brief.version, tool: values.tool, generated: values.generated ?? null, notes: values.notes ?? null,
-      evaluatedAt: new Date().toISOString(), siteHash: await hashDir(dir), pages, lighthouse, axe, validator, content,
+      evaluatedAt: new Date().toISOString(), siteHash, pages, lighthouse, axe: { ...axe, rendered: undefined }, validator, content, checkedOn: "rendered DOM (text and HTML) after JavaScript runs", lighthouseUrl: "root",
       environment: { node: process.version, platform: process.platform },
     };
     await mkdir(`results/${brief.id}`, { recursive: true });

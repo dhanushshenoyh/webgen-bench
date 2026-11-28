@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "brief": "sunrise-dental",
+  "briefVersion": 1,
+  "tool": "replit-r1",
+  "generated": "2026-11-28",
+  "notes": null,
+  "evaluatedAt": "2026-11-28T02:58:57.879Z",
+  "siteHash": "46ffe0dec4e14fb1",
+  "pages": [
+    "index.html"
+  ],
+  "lighthouse": [
+    {
+      "page": "index.html",
+      "formFactor": "mobile",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 84,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 4353.309,
+        "fcpMs": 1654.414,
+        "cls": 0.003,
+        "tbtMs": 0,
+        "speedIndexMs": 1654.414
+      },
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "category": "performance"
+        }
+      ]
+    },
+    {
+      "page": "index.html",
+      "formFactor": "desktop",
+      "runs": 5,
+      "lighthouseVersion": "13.6.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "lcpMs": 963.172,
+        "fcpMs": 507.232,
+        "cls": 0.001,
+        "tbtMs": 0,
+        "speedIndexMs": 507.232
+      },
+      "failedAudits": []
+    }
+  ],
+  "axe": {
+    "axeVersion": "4.14.0",
+    "widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      "index.html"
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 4,
+        "page": "index.html",
+        "width": 1440,
+        "wcag": [
+          "1.4.3"
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 4,
+        "page": "index.html",
+        "width": 390,
+        "wcag": [
+          "1.4.3"
+        ]
+      }
+    ],
+    "passes": 47,
+    "incomplete": 2
+  },
+  "validator": {
+    "validator": "W3C Nu HTML Checker 26.11.9 (524d973)",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  "content": {
+    "pages": [
+      "index.html"
+    ],
+    "missingPages": [],
+    "missingFacts": [],
+    "forbiddenFound": []
+  },
+  "checkedOn": "rendered DOM (text and HTML) after JavaScript runs",
+  "environment": {
+    "node": "v22.23.1",
+    "platform": "linux"
+  }
+}

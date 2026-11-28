@@ -12,7 +12,7 @@ export type ValidatorResult = { validator: string; errors: number; warnings: num
 /** Runs the official W3C Nu HTML Checker (vnu.jar) offline on every page. */
 export async function runValidator(dir: string, pages: string[]): Promise<ValidatorResult> {
   const jar = String(require("vnu-jar"));
-  const { stderr } = await run("java", ["-jar", jar, "--format", "json", "--exit-zero-always", ...pages.map((page) => join(dir, page))], { maxBuffer: 32 * 1024 * 1024 });
+  const { stderr } = await run("java", ["-jar", jar, "--format", "json", "--exit-zero-always", ...pages.map((page) => (page.startsWith("/") ? page : join(dir, page)))], { maxBuffer: 32 * 1024 * 1024 });
   const parsed = JSON.parse(stderr || "{\"messages\":[]}") as { messages: { type: string; subType?: string; message: string; url?: string; lastLine?: number }[] };
   const messages = parsed.messages.map((item) => ({ type: item.type, subType: item.subType, message: item.message, page: (item.url ?? "").split("/").pop() ?? "", line: item.lastLine }));
   const { stdout } = await run("java", ["-jar", jar, "--version"]);

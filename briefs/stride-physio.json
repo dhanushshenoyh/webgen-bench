@@ -1,0 +1,101 @@
+{
+  "id": "stride-physio",
+  "title": "Stride Physio and Sports Rehab (fictional physiotherapy clinic)",
+  "business": {
+    "name": "Stride Physio and Sports Rehab",
+    "category_label": "Physiotherapy clinic",
+    "city": "Bengaluru",
+    "address": "221 Indiranagar 100 Feet Road, Bengaluru, Karnataka 560038",
+    "description": "A fictional physiotherapy clinic in Bengaluru for sports injuries, back and neck pain and recovery after surgery.",
+    "doctors": [
+      [
+        "Dr. Arjun Rao",
+        "BPT, MPT (Sports)"
+      ],
+      [
+        "Dr. Meera Iyer",
+        "BPT, MPT (Orthopaedics)"
+      ]
+    ],
+    "services": [
+      [
+        "Sports injury rehabilitation",
+        "Assessment and graded rehab for sprains, strains and overuse injuries."
+      ],
+      [
+        "Back and neck pain",
+        "Manual therapy and exercise for spinal pain."
+      ],
+      [
+        "Post-surgery rehabilitation",
+        "Recovery programmes after knee, shoulder or spine surgery."
+      ],
+      [
+        "Posture and ergonomics",
+        "Assessment and exercises for desk-related pain."
+      ],
+      [
+        "Dry needling",
+        "Needling for muscle trigger points, alongside exercise."
+      ]
+    ],
+    "hours": {
+      "monday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "tuesday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "wednesday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "thursday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "friday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "saturday": {
+        "closed": false,
+        "open": "07:00",
+        "close": "21:00"
+      },
+      "sunday": {
+        "closed": true,
+        "open": null,
+        "close": null
+      }
+    }
+  },
+  "prompt": "Build a polished, accessible website for Stride Physio and Sports Rehab, a fictional physiotherapy clinic in Bengaluru. A fictional physiotherapy clinic in Bengaluru for sports injuries, back and neck pain and recovery after surgery. Clinicians: Dr. Arjun Rao, BPT, MPT (Sports); Dr. Meera Iyer, BPT, MPT (Orthopaedics). Services: Sports injury rehabilitation (Assessment and graded rehab for sprains, strains and overuse injuries.); Back and neck pain (Manual therapy and exercise for spinal pain.); Post-surgery rehabilitation (Recovery programmes after knee, shoulder or spine surgery.); Posture and ergonomics (Assessment and exercises for desk-related pain.); Dry needling (Needling for muscle trigger points, alongside exercise.). Address: 221 Indiranagar 100 Feet Road, Bengaluru, Karnataka 560038. Opening hours: Monday to Saturday 07:00–21:00, closed Sunday. Phone number, email, booking system, prices, reviews and public domain are unknown: do not invent them; give visitors a graceful way to find the clinic and its hours instead. Choose the pages and layout that serve patients best. Include working navigation, an accessible mobile menu and the clinic's real details above. Do not add a contact or booking form without a working backend. Deliver a static website (HTML/CSS/JS, or a framework app that builds to static files). Do not use external analytics, authentication or databases.",
+  "version": 1,
+  "requiredPages": [
+    "index.html"
+  ],
+  "requiredFacts": [
+    "Stride Physio and Sports Rehab",
+    "Bengaluru",
+    "Dr. Arjun Rao",
+    "Dr. Meera Iyer",
+    "Sports injury rehabilitation",
+    "Back and neck pain",
+    "Post-surgery rehabilitation",
+    "Posture and ergonomics",
+    "Dry needling",
+    "221 Indiranagar 100 Feet Road"
+  ],
+  "forbidden": [
+    "lorem ipsum"
+  ],
+  "heldOut": true
+}

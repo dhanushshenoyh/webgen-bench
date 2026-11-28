@@ -1,5 +1,6 @@
 import { chromium } from "playwright-core";
 import { chromePath } from "./browser.ts";
+import { pageUrl } from "./serve.ts";
 
 export type Shot = { page: string; width: number; index: number; jpeg: Buffer };
 
@@ -13,7 +14,7 @@ export async function captureSite(origin: string, pages: string[], widths = [144
       const context = await browser.newContext({ viewport: { width, height }, reducedMotion: "reduce", deviceScaleFactor: 1 });
       for (const page of pages) {
         const tab = await context.newPage();
-        await tab.goto(`${origin}/${page}`, { waitUntil: "load", timeout: 30_000 });
+        await tab.goto(pageUrl(origin, page), { waitUntil: "load", timeout: 30_000 });
         // Scroll through once so lazy-loaded images load, as they would for a visitor, then wait for them.
         await tab.evaluate(async () => {
           for (let y = 0; y < document.documentElement.scrollHeight; y += Math.round(window.innerHeight * 0.8)) {

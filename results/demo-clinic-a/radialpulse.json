@@ -4,8 +4,8 @@
   "briefVersion": 1,
   "tool": "radialpulse",
   "generated": "2026-11-27",
-  "notes": "dev runtime 114",
-  "evaluatedAt": "2026-11-27T16:42:33.114Z",
+  "notes": null,
+  "evaluatedAt": "2026-11-28T02:58:38.925Z",
   "siteHash": "24a51e026f6c6a83",
   "pages": [
     "index.html",
@@ -122,6 +122,7 @@
     "missingFacts": [],
     "forbiddenFound": []
   },
+  "checkedOn": "rendered DOM (text and HTML) after JavaScript runs",
   "environment": {
     "node": "v22.23.1",
     "platform": "linux"

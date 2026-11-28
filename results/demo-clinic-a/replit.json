@@ -5,7 +5,7 @@
   "tool": "replit",
   "generated": "2026-11-24",
   "notes": null,
-  "evaluatedAt": "2026-11-27T14:34:42.332Z",
+  "evaluatedAt": "2026-11-28T02:58:32.696Z",
   "siteHash": "e7e59470800bfac0",
   "pages": [
     "index.html",
@@ -117,7 +117,7 @@
         "subType": "warning",
         "message": "Section lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all sections, or else use a “div” element instead for any cases where no heading is needed.",
         "page": "contact.html",
-        "line": 27
+        "line": 28
       }
     ]
   },
@@ -132,6 +132,7 @@
     ],
     "forbiddenFound": []
   },
+  "checkedOn": "rendered DOM (text and HTML) after JavaScript runs",
   "environment": {
     "node": "v22.23.1",
     "platform": "linux"

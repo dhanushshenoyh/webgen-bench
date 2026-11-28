@@ -1,0 +1,101 @@
+{
+  "id": "little-steps",
+  "title": "Little Steps Children's Clinic (fictional paediatric clinic)",
+  "business": {
+    "name": "Little Steps Children's Clinic",
+    "category_label": "Paediatric clinic",
+    "city": "Pune",
+    "address": "3rd Floor, Orchid Plaza, Baner Road, Pune, Maharashtra 411045",
+    "description": "A fictional paediatric clinic in Pune caring for newborns, children and teenagers.",
+    "doctors": [
+      [
+        "Dr. Kavya Joshi",
+        "MBBS, MD (Paediatrics)"
+      ],
+      [
+        "Ms. Neha Kulkarni",
+        "MSc (Clinical Nutrition)"
+      ]
+    ],
+    "services": [
+      [
+        "Newborn and well-baby checks",
+        "Growth, feeding and development checks in the first year."
+      ],
+      [
+        "Vaccinations",
+        "Routine childhood immunisations on the national schedule."
+      ],
+      [
+        "Growth and nutrition advice",
+        "Height, weight and diet reviews with our nutritionist."
+      ],
+      [
+        "Fever and illness visits",
+        "Same-day visits for common childhood illnesses."
+      ],
+      [
+        "Adolescent health",
+        "Check-ups and guidance for teenagers."
+      ]
+    ],
+    "hours": {
+      "monday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "tuesday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "wednesday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "thursday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "friday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "saturday": {
+        "closed": false,
+        "open": "10:00",
+        "close": "20:00"
+      },
+      "sunday": {
+        "closed": true,
+        "open": null,
+        "close": null
+      }
+    }
+  },
+  "prompt": "Build a polished, accessible website for Little Steps Children's Clinic, a fictional paediatric clinic in Pune. A fictional paediatric clinic in Pune caring for newborns, children and teenagers. Clinicians: Dr. Kavya Joshi, MBBS, MD (Paediatrics); Ms. Neha Kulkarni, MSc (Clinical Nutrition). Services: Newborn and well-baby checks (Growth, feeding and development checks in the first year.); Vaccinations (Routine childhood immunisations on the national schedule.); Growth and nutrition advice (Height, weight and diet reviews with our nutritionist.); Fever and illness visits (Same-day visits for common childhood illnesses.); Adolescent health (Check-ups and guidance for teenagers.). Address: 3rd Floor, Orchid Plaza, Baner Road, Pune, Maharashtra 411045. Opening hours: Monday to Saturday 10:00–20:00, closed Sunday. Phone number, email, booking system, prices, reviews and public domain are unknown: do not invent them; give visitors a graceful way to find the clinic and its hours instead. Choose the pages and layout that serve patients best. Include working navigation, an accessible mobile menu and the clinic's real details above. Do not add a contact or booking form without a working backend. Deliver a static website (HTML/CSS/JS, or a framework app that builds to static files). Do not use external analytics, authentication or databases.",
+  "version": 1,
+  "requiredPages": [
+    "index.html"
+  ],
+  "requiredFacts": [
+    "Little Steps Children's Clinic",
+    "Pune",
+    "Dr. Kavya Joshi",
+    "Ms. Neha Kulkarni",
+    "Newborn and well-baby checks",
+    "Vaccinations",
+    "Growth and nutrition advice",
+    "Fever and illness visits",
+    "Adolescent health",
+    "3rd Floor"
+  ],
+  "forbidden": [
+    "lorem ipsum"
+  ],
+  "heldOut": true
+}

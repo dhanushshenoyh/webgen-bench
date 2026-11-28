@@ -32,3 +32,6 @@ export async function serveSite(dir: string): Promise<{ origin: string; close: (
   if (!address || typeof address === "string") throw new Error("server did not start");
   return { origin: `http://127.0.0.1:${address.port}`, close: () => new Promise((done) => server.close(() => done())) };
 }
+
+/** The address a visitor would use: the site root for the home page (client-side routers 404 on /index.html). */
+export const pageUrl = (origin: string, page: string) => (page === "index.html" ? `${origin}/` : `${origin}/${page}`);
